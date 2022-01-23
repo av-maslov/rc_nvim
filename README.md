@@ -1,0 +1,2 @@
+# nvimrc
+Essential minimal NeoVim 
