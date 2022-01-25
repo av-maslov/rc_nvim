@@ -150,6 +150,7 @@ call plug#begin(s:plug_dir)
    Plug 'morhetz/gruvbox'
    Plug 'reyemxela/base16-helios-scheme'
    Plug 'chriskempson/base16-vim'
+   Plug 'nanotech/jellybeans.vim'
 
   " Autocompletion
   " https://github.com/hrsh7th/nvim-cmp
@@ -177,7 +178,9 @@ call plug#end()
 " F8 - Next random color scheme
 "colorscheme base16-gruvbox-dark-hard " Good for programming, used in Rust videos 
 " colorscheme base16-helios " Very pleasant for TeX: pink + green (izumrude) + light orange
-colorscheme gruvbox
+"colorscheme gruvbox
+colorscheme h80
+"colorscheme jellybeans
 
 
 " Telescope
@@ -199,3 +202,4 @@ noremap <leader>r :Rg<CR>
 nnoremap <leader>s "zyiw:exe ":Rg ".@z.""<CR>
 
 runtime autocomple.vim
+runtime lsp.vim
