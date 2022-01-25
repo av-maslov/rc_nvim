@@ -75,6 +75,8 @@ inoremap jk <esc>
 " Run :Black 
 autocmd FileType python nnoremap <leader>b :Black<CR> 
 autocmd FileType rust nnoremap <leader>b :RustFmt<CR> 
+noremap <F5> :make<CR>
+noremap <F6> :make<BAR>copen<CR>
 " Or, run on save
 " autocmd BufWritePre *.py execute ':Black'
 
@@ -82,6 +84,7 @@ autocmd FileType rust nnoremap <leader>b :RustFmt<CR>
 nnoremap gr :grep -Ii <cword> %:p:h/*<CR>
 nnoremap Gr :grep <cword> %:p:h/*<CR>
 nnoremap GR :grep '\b<cword>\b' %:p:h/*<CR>
+
 
 " autocmd to run scripts
 " :!python % - send all lines from buffer to python
