@@ -117,7 +117,7 @@ set laststatus=2
 set showcmd " Show (partial) command in status line.
 set shortmess+=c " don't give |ins-completion-menu| messages.
 
-" Add ripgrep and Telescope, or FZF
+" Add Telescope, FZF, Rg
 call plug#begin('~/.config/nvim/plugged')
   " :PlugInstall
   " https://github.com/junegunn/vim-plug
@@ -128,17 +128,28 @@ call plug#begin('~/.config/nvim/plugged')
    Plug 'nvim-lua/plenary.nvim'
    Plug 'nvim-telescope/telescope.nvim' 
 
+  " Fuzzy search
+   Plug 'airblade/vim-rooter'
+   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+   Plug 'junegunn/fzf.vim'
+
 call plug#end()
 
 " Telescope
-"
-"  <C-n>,<C-p> for next/previous item
-"  <C-d>, <C-u> for scrolling up/down in preview window
-"  <C-x>, <C-v>, <C-t> for opening in split, vsplit, new tab
-"  <CR> to confirm selection
-" 
-nnoremap <leader>f <cmd>Telescope find_files<cr>
-nnoremap <leader>g <cmd>Telescope live_grep<cr>
-nnoremap <leader>b <cmd>Telescope buffers<cr>
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+" FZF
+map <leader>f :GFiles<CR>
+map <leader>F :Locate /<CR>
+nmap <leader>, :Buffers<CR>
+nnoremap <leader>l :Lines<CR>
+nnoremap <leader>L :BLines<CR>
+
+" :Rg! - show result on the whole screen
+noremap <leader>r :Rg<CR>
+" Yank word under cursor and rg search for it
+nnoremap <leader>s "zyiw:exe ":Rg ".@z.""<CR>
 
