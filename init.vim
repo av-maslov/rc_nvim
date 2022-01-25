@@ -3,6 +3,7 @@
 " vim -u essential.vim
 " Run :checkhealth
 " =============================================== "
+"
 set nocompatible
 filetype plugin indent on
 syntax on
@@ -103,8 +104,7 @@ set tags=tags
 set undodir=~/.vimdid
 set undofile
 
-let g:python_host_prog = '/usr/bin/python'
-let g:python3_host_prog = '/usr/local/bin/python3'
+
 " Install vim-plug: https://github.com/junegunn/vim-plug
 " sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
@@ -120,6 +120,7 @@ set laststatus=2
 set showcmd " Show (partial) command in status line.
 set shortmess+=c " don't give |ins-completion-menu| messages.
 
+let g:python3_host_prog = '/usr/local/bin/python3'
 let s:plug_dir = expand('~/.config/nvim/plugged')
 " Add Telescope, FZF, Rg
 call plug#begin(s:plug_dir)
@@ -140,6 +141,13 @@ call plug#begin(s:plug_dir)
 
    Plug 'rbgrouleff/bclose.vim'
    Plug 'francoiscabrol/ranger.vim' " If you use neovim, you have to add the dependency to the plugin bclose.vim
+
+   Plug 'jiangmiao/auto-pairs'
+
+   " Snippets
+   " :UltiSnipsEdit
+   " :Snippets - explore snippets
+   Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
    " Colors
    "
@@ -212,3 +220,9 @@ map <leader>r :Ranger<CR>
 
 runtime autocomple.vim
 runtime lsp.vim
+
+
+" !!! Important: set at the END !!!
+"https://neovim.io/doc/user/provider.html
+"let g:python_host_prog = '/home/al/.pyenv/shims/python'
+let g:python3_host_prog = '/home/al/.pyenv/shims/python3'
