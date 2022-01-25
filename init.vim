@@ -181,8 +181,8 @@ call plug#end()
 " F8 - Next random color scheme
 "colorscheme base16-gruvbox-dark-hard " Good for programming, used in Rust videos 
 " colorscheme base16-helios " Very pleasant for TeX: pink + green (izumrude) + light orange
-"colorscheme gruvbox
-colorscheme h80
+colorscheme gruvbox
+" colorscheme h80
 "colorscheme jellybeans
 
 
