@@ -138,6 +138,9 @@ call plug#begin(s:plug_dir)
    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
    Plug 'junegunn/fzf.vim'
 
+   Plug 'rbgrouleff/bclose.vim'
+   Plug 'francoiscabrol/ranger.vim' " If you use neovim, you have to add the dependency to the plugin bclose.vim
+
    " Colors
    "
    " Switch color schemes:
@@ -200,6 +203,11 @@ nnoremap <leader>L :BLines<CR>
 noremap <leader>r :Rg<CR>
 " Yank word under cursor and rg search for it
 nnoremap <leader>s "zyiw:exe ":Rg ".@z.""<CR>
+
+" Ranger
+let g:ranger_map_keys = 0
+map <leader>r :Ranger<CR>
+
 
 runtime autocomple.vim
 runtime lsp.vim
