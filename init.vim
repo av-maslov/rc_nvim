@@ -155,6 +155,7 @@ call plug#begin(s:plug_dir)
    Plug 'chriskempson/base16-vim'
    Plug 'nanotech/jellybeans.vim'
 
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   " Autocompletion
   " https://github.com/hrsh7th/nvim-cmp
   Plug 'neovim/nvim-lspconfig'
