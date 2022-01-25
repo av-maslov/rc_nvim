@@ -117,3 +117,28 @@ set laststatus=2
 set showcmd " Show (partial) command in status line.
 set shortmess+=c " don't give |ins-completion-menu| messages.
 
+" Add ripgrep and Telescope, or FZF
+call plug#begin('~/.config/nvim/plugged')
+  " :PlugInstall
+  " https://github.com/junegunn/vim-plug
+  " sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+   " Telescope
+   Plug 'nvim-lua/popup.nvim'
+   Plug 'nvim-lua/plenary.nvim'
+   Plug 'nvim-telescope/telescope.nvim' 
+
+call plug#end()
+
+" Telescope
+"
+"  <C-n>,<C-p> for next/previous item
+"  <C-d>, <C-u> for scrolling up/down in preview window
+"  <C-x>, <C-v>, <C-t> for opening in split, vsplit, new tab
+"  <CR> to confirm selection
+" 
+nnoremap <leader>f <cmd>Telescope find_files<cr>
+nnoremap <leader>g <cmd>Telescope live_grep<cr>
+nnoremap <leader>b <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
