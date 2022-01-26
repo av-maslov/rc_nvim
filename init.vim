@@ -149,6 +149,15 @@ call plug#begin(s:plug_dir)
    " :Snippets - explore snippets
    Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
+   " Git
+   Plug 'tpope/vim-fugitive'
+   Plug 'airblade/vim-gitgutter'
+   " Show diffs
+   Plug 'mhinz/vim-signify'
+   " Browse commits :GV, :GV!
+   Plug 'junegunn/gv.vim'
+
+
    " Colors
    "
    " Switch color schemes:
