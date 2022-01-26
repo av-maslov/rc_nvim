@@ -151,6 +151,7 @@ call plug#begin(s:plug_dir)
 
    " Git
    Plug 'tpope/vim-fugitive'
+   " Keys: [c , ]c to jump between changes
    Plug 'airblade/vim-gitgutter'
    " Show diffs
    Plug 'mhinz/vim-signify'
