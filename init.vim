@@ -38,6 +38,7 @@ nnoremap <c-s> <Esc>:update<CR>
 " Save file in normal mode
 nmap <leader>w :w<CR>
 nmap <leader>q :q<CR>
+
 " Buffers navigation page 85, tip 37
 nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
@@ -47,6 +48,7 @@ nnoremap <silent> ]B :blast<CR>
 " Switch buffers
 nnoremap <leader><leader> <c-^>
 nnoremap <c-t> <c-^>
+
 " Ctrl+j and Ctrl+k as Esc
 " Ctrl-j is a little awkward unfortunately:
 " https://github.com/neovim/neovim/issues/5916
@@ -73,6 +75,9 @@ tnoremap <C-k> <Esc>
 
 inoremap jk <esc>
 
+" Exit insert mode in the Terminal mode 
+tnoremap <Esc> <C-\><C-n>
+
 " Run :Black 
 autocmd FileType python nnoremap <leader>b :Black<CR> 
 autocmd FileType rust nnoremap <leader>b :RustFmt<CR> 
@@ -85,7 +90,6 @@ noremap <F6> :make<BAR>copen<CR>
 nnoremap gr :grep -Ii <cword> %:p:h/*<CR>
 nnoremap Gr :grep <cword> %:p:h/*<CR>
 nnoremap GR :grep '\b<cword>\b' %:p:h/*<CR>
-
 
 " autocmd to run scripts
 " :!python % - send all lines from buffer to python
@@ -104,10 +108,6 @@ set tags=tags
 set undodir=~/.vimdid
 set undofile
 
-
-" Install vim-plug: https://github.com/junegunn/vim-plug
-" sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-
 " Gui settings
 set guioptions-=T " Remove toolbar
 set backspace=2 " Backspace over newlines
@@ -120,7 +120,7 @@ set laststatus=2
 set showcmd " Show (partial) command in status line.
 set shortmess+=c " don't give |ins-completion-menu| messages.
 
-let g:python3_host_prog = '/usr/local/bin/python3'
+" del, it is in the end let g:python3_host_prog = '/usr/local/bin/python3'
 let s:plug_dir = expand('~/.config/nvim/plugged')
 " Add Telescope, FZF, Rg
 call plug#begin(s:plug_dir)
@@ -159,7 +159,6 @@ call plug#begin(s:plug_dir)
 
 
    " Colors
-   "
    " Switch color schemes:
    " https://github.com/xolox/vim-colorscheme-switcher
    Plug 'flazz/vim-colorschemes'
@@ -203,7 +202,6 @@ colorscheme gruvbox
 " colorscheme h80
 "colorscheme jellybeans
 
-
 " Telescope
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
@@ -226,10 +224,9 @@ nnoremap <leader>s "zyiw:exe ":Rg ".@z.""<CR>
 let g:ranger_map_keys = 0
 map <leader>r :Ranger<CR>
 
-
-runtime autocomple.vim
-runtime lsp.vim
-
+runtime settings-autocomple.vim
+runtime settings-lsp.vim
+runtime settings-nvim-cmp.vim
 
 " !!! Important: set at the END !!!
 "https://neovim.io/doc/user/provider.html

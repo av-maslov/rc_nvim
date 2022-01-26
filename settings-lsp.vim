@@ -1,4 +1,3 @@
-
 " https://github.com/neovim/nvim-lspconfig
 
 lua << EOF
