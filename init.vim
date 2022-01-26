@@ -49,6 +49,7 @@ nnoremap <silent> ]B :blast<CR>
 nnoremap <leader><leader> <c-^>
 nnoremap <c-t> <c-^>
 
+
 " Ctrl+j and Ctrl+k as Esc
 " Ctrl-j is a little awkward unfortunately:
 " https://github.com/neovim/neovim/issues/5916
@@ -74,6 +75,12 @@ lnoremap <C-k> <Esc>
 tnoremap <C-k> <Esc>
 
 inoremap jk <esc>
+
+" Switch split panes 
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-l> :wincmd l<CR>
 
 " Exit insert mode in the Terminal mode 
 tnoremap <Esc> <C-\><C-n>
