@@ -16,9 +16,9 @@ set noswapfile
 set number
 "set cursorline
 au Filetype tex set spell
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 set mouse=a " Enable mouse usage (all modes) in terminals
 set autochdir
@@ -31,7 +31,7 @@ set diffopt+=indent-heuristic
 
 " nnoremap
 let mapleader = "\<Space>"
-nnoremap <silent> <C-l> :nohl<CR><C-l>
+nnoremap <silent> <C-l> :nohl<CR> "<C-l>
 " Save file in edit mode
 inoremap <c-s> <Esc>:update<CR>
 nnoremap <c-s> <Esc>:update<CR>
@@ -82,7 +82,7 @@ nnoremap <silent> <leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 nmap <silent> <c-k> :wincmd k<CR>
 nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
-nmap <silent> <c-l> :wincmd l<CR>
+"nmap <silent> <c-l> :wincmd l<CR> " Overwrites nohl 
 nnoremap <silent> <leader>t <C-w>w<CR> " Cycle through spli panes 
 
 " Exit insert mode in the Terminal mode 
