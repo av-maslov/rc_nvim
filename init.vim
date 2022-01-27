@@ -91,6 +91,21 @@ tnoremap jk <C-\><C-n>
 "tnoremap <C-C> <C-\><C-n><C-w>w
 " tnoremap <C-w>j <C-\><C-n><C-w>j
 
+" From :help
+tnoremap <A-h> <C-\><C-N><C-w>h
+tnoremap <A-j> <C-\><C-N><C-w>j
+tnoremap <A-k> <C-\><C-N><C-w>k
+tnoremap <A-l> <C-\><C-N><C-w>l
+inoremap <A-h> <C-\><C-N><C-w>h
+inoremap <A-j> <C-\><C-N><C-w>j
+inoremap <A-k> <C-\><C-N><C-w>k
+inoremap <A-l> <C-\><C-N><C-w>l
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
+
+
 " Run :Black 
 autocmd FileType python nnoremap <leader>b :Black<CR> 
 autocmd FileType rust nnoremap <leader>b :RustFmt<CR> 
@@ -105,13 +120,15 @@ nnoremap GR :grep '\b<cword>\b' %:p:h/*<CR>
 " autocmd to run scripts
 " :!python % - send all lines from buffer to python
 autocmd FileType python nnoremap <buffer> <leader>5 :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+autocmd FileType python nnoremap <buffer> <F5> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 
 " autocmd FileType cpp nnoremap <buffer> <leader>5 :w<CR>:make<CR>
 " https://stackoverflow.com/questions/540721/compile-directly-from-vim
 autocmd filetype cpp nnoremap <buffer> <leader>4 :!g++ -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 % -ggdb -o %:r <CR>
 autocmd filetype cpp nnoremap <buffer> <leader>5 :!g++ -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 % -ggdb -o %:r && ./%:r <CR>
-
 " From: https://youtu.be/a2DD36WHpAY
+autocmd filetype cpp noremap <F5> <ESC> :w <CR> :!g++ -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< <CR>
+autocmd filetype cpp inoremap <F5> <ESC> :w <CR> :!g++ -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< <CR>
 " noremap <F9> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< <CR>
 " inoremap <F9> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< <CR>
 " autocmd filetype cpp noremap <F10> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< < inp<CR>
@@ -195,27 +212,32 @@ call plug#begin(s:plug_dir)
    Plug 'chriskempson/base16-vim'
    Plug 'nanotech/jellybeans.vim'
 
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-  " Autocompletion
-  " https://github.com/hrsh7th/nvim-cmp
-  Plug 'neovim/nvim-lspconfig'
-  Plug 'hrsh7th/cmp-nvim-lsp'
-  Plug 'hrsh7th/cmp-buffer'
-  Plug 'hrsh7th/cmp-path'
-  Plug 'hrsh7th/cmp-cmdline'
-  Plug 'hrsh7th/nvim-cmp'
-  " For vsnip users.
-  "Plug 'hrsh7th/cmp-vsnip'
-  "Plug 'hrsh7th/vim-vsnip'
-  " For luasnip users.
-  " Plug 'L3MON4D3/LuaSnip'
-  " Plug 'saadparwaiz1/cmp_luasnip'
-  " For ultisnips users.
-  " Plug 'SirVer/ultisnips'
-  " Plug 'quangnguyen30192/cmp-nvim-ultisnips'
-  " For snippy users.
-  " Plug 'dcampos/nvim-snippy'
-  " Plug 'dcampos/cmp-snippy'
+   " LSP 
+   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+   " Autocompletion
+   " https://github.com/hrsh7th/nvim-cmp
+   Plug 'neovim/nvim-lspconfig'
+   Plug 'hrsh7th/cmp-nvim-lsp'
+   Plug 'hrsh7th/cmp-buffer'
+   Plug 'hrsh7th/cmp-path'
+   Plug 'hrsh7th/cmp-cmdline'
+   Plug 'hrsh7th/nvim-cmp'
+   " For vsnip users.
+   "Plug 'hrsh7th/cmp-vsnip'
+   "Plug 'hrsh7th/vim-vsnip'
+   " For luasnip users.
+   " Plug 'L3MON4D3/LuaSnip'
+   " Plug 'saadparwaiz1/cmp_luasnip'
+   " For ultisnips users.
+   " Plug 'SirVer/ultisnips'
+   " Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+   " For snippy users.
+   " Plug 'dcampos/nvim-snippy'
+   " Plug 'dcampos/cmp-snippy'
+   "
+   " Coc 
+   " Use release branch (recommend)
+   Plug 'neoclide/coc.nvim', {'branch': 'release'}   
 call plug#end()
 
 " Colors
@@ -240,7 +262,7 @@ nnoremap <leader>l :Lines<CR>
 nnoremap <leader>L :BLines<CR>
 
 " :Rg! - show result on the whole screen
-noremap <leader>r :Rg<CR>
+noremap <leader>g :Rg<CR>
 " Yank word under cursor and rg search for it
 nnoremap <leader>s "zyiw:exe ":Rg ".@z.""<CR>
 
@@ -249,8 +271,9 @@ let g:ranger_map_keys = 0
 map <leader>r :Ranger<CR>
 
 runtime settings-autocomple.vim
-runtime settings-lsp.vim
+" runtime settings-lsp.vim
 runtime settings-nvim-cmp.vim
+runtime settings-lsp-coc.vim 
 
 " !!! Important: set at the END !!!
 "https://neovim.io/doc/user/provider.html
