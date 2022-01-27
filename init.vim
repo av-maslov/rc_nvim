@@ -73,13 +73,17 @@ onoremap <C-k> <Esc>
 lnoremap <C-k> <Esc>
 tnoremap <C-k> <Esc>
 
-inoremap jk <esc>
+inoremap jk <esc> " Very convenient
 
+" Split panes keys
+nnoremap <silent> <leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 " Switch split panes 
 nmap <silent> <c-k> :wincmd k<CR>
 nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
+nnoremap <silent> <leader>t <C-w>w<CR> " Cycle through spli panes 
 
 " Exit insert mode in the Terminal mode 
 "tnoremap <Esc> <C-\><C-n> "Disables exit from :Rg window
@@ -88,8 +92,6 @@ tnoremap jk <C-\><C-n>
 " Run :Black 
 autocmd FileType python nnoremap <leader>b :Black<CR> 
 autocmd FileType rust nnoremap <leader>b :RustFmt<CR> 
-noremap <F5> :make<CR>
-noremap <F6> :make<BAR>copen<CR>
 " Or, run on save
 " autocmd BufWritePre *.py execute ':Black'
 
@@ -101,14 +103,25 @@ nnoremap GR :grep '\b<cword>\b' %:p:h/*<CR>
 " autocmd to run scripts
 " :!python % - send all lines from buffer to python
 autocmd FileType python nnoremap <buffer> <leader>5 :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+
 " autocmd FileType cpp nnoremap <buffer> <leader>5 :w<CR>:make<CR>
 " https://stackoverflow.com/questions/540721/compile-directly-from-vim
-autocmd filetype cpp nnoremap <buffer> <leader>4 :!g++ % -ggdb -o %:r <CR>
-autocmd filetype cpp nnoremap <buffer> <leader>5 :!g++ % -ggdb -o %:r && ./%:r <CR>
+autocmd filetype cpp nnoremap <buffer> <leader>4 :!g++ -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 % -ggdb -o %:r <CR>
+autocmd filetype cpp nnoremap <buffer> <leader>5 :!g++ -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 % -ggdb -o %:r && ./%:r <CR>
+
+" From: https://youtu.be/a2DD36WHpAY
+" noremap <F9> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< <CR>
+" inoremap <F9> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< <CR>
+" autocmd filetype cpp noremap <F10> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< < inp<CR>
+" autocmd filetype cpp inoremap <F10> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o "%<" "%" && "./%<" < inp<CR>
+
 autocmd filetype rust nnoremap <buffer> <leader>5 :!cargo run<CR>
 
+noremap <F5> :make<CR>
+noremap <F6> :make<BAR>copen<CR>
+
 "ctags p.257, tip 103 
-nnoremap <leader>t :!ctags -R --languages=python --python-kinds=-i --exclude=.git --exclude=venv<CR>
+nnoremap <leader>e :!ctags -R --languages=python --python-kinds=-i --exclude=.git --exclude=venv<CR>
 set tags=tags
 
 " Permanent undo: u - undo, Ctrl r - redo
