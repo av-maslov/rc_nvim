@@ -88,6 +88,8 @@ nnoremap <silent> <leader>t <C-w>w<CR> " Cycle through spli panes
 " Exit insert mode in the Terminal mode 
 "tnoremap <Esc> <C-\><C-n> "Disables exit from :Rg window
 tnoremap jk <C-\><C-n>
+"tnoremap <C-C> <C-\><C-n><C-w>w
+" tnoremap <C-w>j <C-\><C-n><C-w>j
 
 " Run :Black 
 autocmd FileType python nnoremap <leader>b :Black<CR> 
@@ -167,6 +169,7 @@ call plug#begin(s:plug_dir)
    " Snippets
    " :UltiSnipsEdit
    " :Snippets - explore snippets
+   " Ctrl j Jump to next 
    Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
    " Git
