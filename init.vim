@@ -125,7 +125,7 @@ autocmd FileType python nnoremap <buffer> <F5> :w<CR>:exec '!python3' shellescap
 " autocmd FileType cpp nnoremap <buffer> <leader>5 :w<CR>:make<CR>
 " https://stackoverflow.com/questions/540721/compile-directly-from-vim
 autocmd filetype cpp nnoremap <buffer> <leader>4 :!g++ -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 % -ggdb -o %:r <CR>
-autocmd filetype cpp nnoremap <buffer> <leader>5 :!g++ -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 % -ggdb -o %:r && ./%:r <CR>
+autocmd filetype cpp nnoremap <buffer> <leader>5 :!g++ -std=c++17 -Wextra -Wshadow -DONPC -O2 % -ggdb -o %:r && ./%:r <CR>
 " From: https://youtu.be/a2DD36WHpAY
 autocmd filetype cpp noremap <F5> <ESC> :w <CR> :!g++ -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< <CR>
 autocmd filetype cpp inoremap <F5> <ESC> :w <CR> :!g++ -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< <CR>
