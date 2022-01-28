@@ -14,13 +14,14 @@
 let g:lightline = {
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'readonly', 'filename', 'modified' ] ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
       \   'right': [ ['lineinfo'], 
       \              [ 'percent' ], 
       \              [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ] 
       \ },
       \ 'component_function': {
       \   'filename': 'LightlineFilename',
+      \   'gitbranch': 'FugitiveHead',
       \ },
       \ 'component': {
       \   'charvaluehex': '0x%B'
