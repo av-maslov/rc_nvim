@@ -136,8 +136,8 @@ autocmd filetype cpp inoremap <F5> <ESC> :w <CR> :!g++ -std=c++17 -Wall -Wextra 
 
 autocmd filetype rust nnoremap <buffer> <leader>5 :!cargo run<CR>
 
-noremap <F5> :make<CR>
-noremap <F6> :make<BAR>copen<CR>
+noremap <F6> :make<CR>
+noremap <F7> :make<BAR>copen<CR>
 
 "ctags p.257, tip 103 
 nnoremap <leader>e :!ctags -R --languages=python --python-kinds=-i --exclude=.git --exclude=venv<CR>
