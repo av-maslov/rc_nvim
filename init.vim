@@ -222,22 +222,17 @@ call plug#begin(s:plug_dir)
    Plug 'hrsh7th/cmp-path'
    Plug 'hrsh7th/cmp-cmdline'
    Plug 'hrsh7th/nvim-cmp'
-   " For vsnip users.
-   "Plug 'hrsh7th/cmp-vsnip'
-   "Plug 'hrsh7th/vim-vsnip'
-   " For luasnip users.
-   " Plug 'L3MON4D3/LuaSnip'
-   " Plug 'saadparwaiz1/cmp_luasnip'
-   " For ultisnips users.
-   " Plug 'SirVer/ultisnips'
-   " Plug 'quangnguyen30192/cmp-nvim-ultisnips'
-   " For snippy users.
-   " Plug 'dcampos/nvim-snippy'
-   " Plug 'dcampos/cmp-snippy'
-   "
-   " Coc 
+
+   Plug 'google/vim-searchindex'
+   "Plug 'vim-airline/vim-airline'
+   " Instead of airline:
+   Plug 'itchyny/lightline.vim'
+   Plug 'sheerun/vim-polyglot'
+
+  
+   " Coc - Clashes with Ultisnips
    " Use release branch (recommend)
-   Plug 'neoclide/coc.nvim', {'branch': 'release'}   
+   "P lug 'neoclide/coc.nvim', {'branch': 'release'}   
 call plug#end()
 
 " Colors
@@ -271,9 +266,11 @@ let g:ranger_map_keys = 0
 map <leader>r :Ranger<CR>
 
 runtime settings-autocomple.vim
-" runtime settings-lsp.vim
+runtime settings-lsp.vim
 runtime settings-nvim-cmp.vim
-runtime settings-lsp-coc.vim 
+runtime settings-lightline.vim
+runtime settings-ultisnips.vim
+" runtime settings-lsp-coc.vim - Clashes with UltiSnips
 
 " !!! Important: set at the END !!!
 "https://neovim.io/doc/user/provider.html
