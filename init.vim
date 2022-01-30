@@ -306,6 +306,7 @@ map <leader>F :Locate /<CR>
 nmap <leader>, :Buffers<CR>
 nnoremap <leader>l :Lines<CR>
 nnoremap <leader>L :BLines<CR>
+let g:fzf_layout = {'down': '~30%'}
 
 " :Rg! - show result on the whole screen
 noremap <leader>g :Rg<CR>
