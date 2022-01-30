@@ -30,6 +30,11 @@ set diffopt+=iwhite " No whitespace in vimdiff
 " Make diffing better: https://vimways.org/2018/the-power-of-diff/
 set diffopt+=algorithm:patience
 set diffopt+=indent-heuristic
+set colorcolumn=80 " and give me a colored column
+
+" Show those damn hidden characters
+" Verbose: set listchars=nbsp:¬,eol:¶,extends:»,precedes:«,trail:•
+set listchars=nbsp:¬,extends:»,precedes:«,trail:•
 
 " nnoremap
 let mapleader = "\<Space>"
@@ -106,6 +111,49 @@ nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
+
+
+
+
+" Search results centered please
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
+nnoremap <silent> * *zz
+nnoremap <silent> # #zz
+nnoremap <silent> g* g*zz
+
+" Very magic by default
+nnoremap ? ?\v
+nnoremap / /\v
+cnoremap %s/ %sm/
+
+" Open new file adjacent to current file
+nnoremap <leader>o :e <C-R>=expand("%:p:h") . "/" <CR>
+
+" No arrow keys --- force yourself to use the home row
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
+" Left and right can switch buffers
+nnoremap <left> :bp<CR>
+nnoremap <right> :bn<CR>
+
+" Move by line
+nnoremap j gj
+nnoremap k gk
+
+" Help filetype detection
+autocmd BufRead *.plot set filetype=gnuplot
+autocmd BufRead *.md set filetype=markdown
+autocmd BufRead *.lds set filetype=ld
+autocmd BufRead *.tex set filetype=tex
+autocmd BufRead *.trm set filetype=c
+autocmd BufRead *.xlsx.axlsx set filetype=ruby
+
 
 
 " Run :Black 
