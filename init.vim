@@ -18,10 +18,6 @@ set number
 set cursorline
 hi CursorLine term=bold cterm=bold guibg=Grey40
 au Filetype tex set spell
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
 set mouse=a " Enable mouse usage (all modes) in terminals
 set autochdir
 set autoread
@@ -31,6 +27,24 @@ set diffopt+=iwhite " No whitespace in vimdiff
 set diffopt+=algorithm:patience
 set diffopt+=indent-heuristic
 set colorcolumn=80 " and give me a colored column
+
+" .vim to .lua
+"
+" set expandtab
+" set tabstop=4
+" set shiftwidth=4
+" set softtabstop=4
+"
+lua << EOF
+vim.bo.expandtab = true
+vim.bo.tabstop = 4
+vim.bo.softtabstop = 4
+vim.bo.shiftwidth = 4
+
+EOF
+lua require('lua/keybindings')
+"lua require('lua/lua-ls')
+" End .vim to .lua
 
 " Show those damn hidden characters
 " Verbose: set listchars=nbsp:¬,eol:¶,extends:»,precedes:«,trail:•
