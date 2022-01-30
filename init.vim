@@ -279,11 +279,14 @@ call plug#begin(s:plug_dir)
    Plug 'itchyny/lightline.vim'
    Plug 'sheerun/vim-polyglot'
 
+   Plug 'psf/black', { 'branch': 'stable' }
   
    " Coc - Clashes with Ultisnips
    " Use release branch (recommend)
    "P lug 'neoclide/coc.nvim', {'branch': 'release'}   
 call plug#end()
+
+let g:black_linelength = 120
 
 " Colors
 " F8 - Next random color scheme
