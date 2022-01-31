@@ -28,24 +28,61 @@ set diffopt+=algorithm:patience
 set diffopt+=indent-heuristic
 set colorcolumn=80 " and give me a colored column
 
-
 " Porting lua
 "
-" set expandtab
-" set tabstop=4
-" set shiftwidth=4
-" set softtabstop=4
+" Done:
+"lua: set expandtab
+"lua: set tabstop=4
+"lua: set shiftwidth=4
+"lua: set softtabstop=4
 "
+" No arrow keys --- force yourself to use the home row
+"lua: nnoremap <up> <nop>
+"lua: nnoremap <down> <nop>
+"lua: inoremap <up> <nop>
+"lua: inoremap <down> <nop>
+"lua: inoremap <left> <nop>
+"lua: inoremap <right> <nop>
+
+" Left and right can switch buffers
+"lua: nnoremap <left> :bp<CR>
+"lua: nnoremap <right> :bn<CR>
+
 lua << EOF
 vim.bo.expandtab = true
 vim.bo.tabstop = 4
 vim.bo.softtabstop = 4
 vim.bo.shiftwidth = 4
 
+local keymap = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
+keymap("n", "<C-Up>", ":resize -2<CR>", opts)
+keymap("n", "<C-Down>", ":resize +2<CR>", opts)
+keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
+keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+
+-- No arrow keys --- force yourself to use the home row
+keymap("n", "<Up>", '', opts)
+keymap("n", "<Down>", '', opts)
+
+keymap("i", "<Up>", "", opts)
+keymap("i", "<Down>", "", opts)
+keymap("i", "<Left>", "", opts)
+keymap("i", "<Right>", "", opts)
+
+--Left and right can switch buffers
+keymap("n", "<Left>", ":bp<CR>", opts)
+keymap("n", "<Right>", ":bn<CR>", opts)
 EOF
+
 " lua require('lua/keybindings')
 "lua require('lua/lua-ls')
-" End .vim to .lua
+
+
+
+
+
+
 
 
 " Permanent undo: u - undo, Ctrl r - redo
@@ -143,6 +180,7 @@ nnoremap <silent> * *zz
 nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
 
+
 " Very magic by default
 nnoremap ? ?\v
 nnoremap / /\v
@@ -151,17 +189,6 @@ cnoremap %s/ %sm/
 " Open new file adjacent to current file
 nnoremap <leader>o :e <C-R>=expand("%:p:h") . "/" <CR>
 
-" No arrow keys --- force yourself to use the home row
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-
-" Left and right can switch buffers
-nnoremap <left> :bp<CR>
-nnoremap <right> :bn<CR>
 
 " Move by line
 nnoremap j gj
