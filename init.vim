@@ -43,7 +43,7 @@ vim.bo.softtabstop = 4
 vim.bo.shiftwidth = 4
 
 EOF
-lua require('lua/keybindings')
+" lua require('lua/keybindings')
 "lua require('lua/lua-ls')
 " End .vim to .lua
 
