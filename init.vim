@@ -28,7 +28,8 @@ set diffopt+=algorithm:patience
 set diffopt+=indent-heuristic
 set colorcolumn=80 " and give me a colored column
 
-" .vim to .lua
+
+" Porting lua
 "
 " set expandtab
 " set tabstop=4
@@ -46,9 +47,17 @@ lua require('lua/keybindings')
 "lua require('lua/lua-ls')
 " End .vim to .lua
 
+
+" Permanent undo: u - undo, Ctrl r - redo
+set undodir=~/.vimdid
+set undofile
+
+
 " Show those damn hidden characters
 " Verbose: set listchars=nbsp:¬,eol:¶,extends:»,precedes:«,trail:•
 set listchars=nbsp:¬,extends:»,precedes:«,trail:•
+
+
 
 " nnoremap
 let mapleader = "\<Space>"
@@ -127,8 +136,6 @@ nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
 
-
-
 " Search results centered please
 nnoremap <silent> n nzz
 nnoremap <silent> N Nzz
@@ -168,8 +175,6 @@ autocmd BufRead *.tex set filetype=tex
 autocmd BufRead *.trm set filetype=c
 autocmd BufRead *.xlsx.axlsx set filetype=ruby
 
-
-
 " Run :Black 
 autocmd FileType python nnoremap <leader>b :Black<CR> 
 autocmd FileType rust nnoremap <leader>b :RustFmt<CR> 
@@ -180,6 +185,11 @@ autocmd FileType rust nnoremap <leader>b :RustFmt<CR>
 nnoremap gr :grep -Ii <cword> %:p:h/*<CR>
 nnoremap Gr :grep <cword> %:p:h/*<CR>
 nnoremap GR :grep '\b<cword>\b' %:p:h/*<CR>
+
+
+
+
+
 
 " autocmd to run scripts
 " :!python % - send all lines from buffer to python
@@ -197,7 +207,6 @@ autocmd filetype cpp inoremap <F5> <ESC> :w <CR> :!g++ -std=c++17 -Wall -Wextra 
 " inoremap <F9> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< <CR>
 " autocmd filetype cpp noremap <F10> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< < inp<CR>
 " autocmd filetype cpp inoremap <F10> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o "%<" "%" && "./%<" < inp<CR>
-
 autocmd filetype rust nnoremap <buffer> <leader>5 :!cargo run<CR>
 
 noremap <F6> :make<CR>
@@ -207,9 +216,13 @@ noremap <F7> :make<BAR>copen<CR>
 nnoremap <leader>e :!ctags -R --languages=python --python-kinds=-i --exclude=.git --exclude=venv<CR>
 set tags=tags
 
-" Permanent undo: u - undo, Ctrl r - redo
-set undodir=~/.vimdid
-set undofile
+
+
+
+
+
+
+
 
 " Gui settings
 set guioptions-=T " Remove toolbar
@@ -222,6 +235,9 @@ set synmaxcol=500
 set laststatus=2
 set showcmd " Show (partial) command in status line.
 set shortmess+=c " don't give |ins-completion-menu| messages.
+
+
+
 
 " del, it is in the end let g:python3_host_prog = '/usr/local/bin/python3'
 let s:plug_dir = expand('~/.config/nvim/plugged')
@@ -311,11 +327,14 @@ colorscheme gruvbox
 " colorscheme h80
 "colorscheme jellybeans
 
+
+
 " Telescope
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
 
 " FZF
 map <leader>f :GFiles<CR>
@@ -341,7 +360,7 @@ runtime settings-lightline.vim
 runtime settings-ultisnips.vim
 " runtime settings-lsp-coc.vim - Clashes with UltiSnips
 
-" !!! Important: set at the END !!!
+" Important: have it at the end.
 "https://neovim.io/doc/user/provider.html
 "let g:python_host_prog = '/home/al/.pyenv/shims/python'
 let g:python3_host_prog = '/home/al/.pyenv/shims/python3'
