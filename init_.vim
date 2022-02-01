@@ -28,113 +28,27 @@ set diffopt+=algorithm:patience
 set diffopt+=indent-heuristic
 set colorcolumn=80 " and give me a colored column
 
-" Porting lua
+" .vim to .lua
 "
-" Done:
-set expandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+" set expandtab
+" set tabstop=4
+" set shiftwidth=4
+" set softtabstop=4
 "
-" No arrow keys --- force yourself to use the home row
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
+lua << EOF
+vim.bo.expandtab = true
+vim.bo.tabstop = 4
+vim.bo.softtabstop = 4
+vim.bo.shiftwidth = 4
 
-" Left and right can switch buffers
-nnoremap <left> :bp<CR>
-nnoremap <right> :bn<CR>
-
-" lua << EOF
-" vim.cmd([[
-"   set nocompatible
-"   filetype plugin indent on
-"   set noswapfile
-"   syntax on
-"   syntax enable
-"   set encoding=utf-8
-" ]])
-" 
-" vim.o.wrap = true 
-" vim.o.linebreak=true
-" vim.o.relativenumber=true
-" vim.o.number=true
-" 
-" local set = vim.opt
-" set.cursorline = true
-" vim.cmd([[
-"   hi CursorLine term=bold cterm=bold guibg=Grey40
-"   au Filetype tex set spell
-"   set mouse=a " Enable mouse usage (all modes) in terminals
-"   set autochdir
-"   set autoread
-"   set vb t_vb= " No more beeps
-"   set diffopt+=iwhite " No whitespace in vimdiff
-"   " Make diffing better: https://vimways.org/2018/the-power-of-diff/
-"   set diffopt+=algorithm:patience
-"   set diffopt+=indent-heuristic
-" ]])
-" -- Set the behavior of tab
-" set.expandtab = true
-" set.tabstop = 2
-" set.softtabstop = 2
-" set.shiftwidth = 2
-" 
-" vim.wo.colorcolumn = '80'
-" 
-" -- use space as a the leader key
-" vim.g.mapleader = ' '
-" local keymap = vim.api.nvim_set_keymap
-" local opts = { noremap = true, silent = true }
-" keymap("n", "<C-Up>", ":resize -2<CR>", opts)
-" keymap("n", "<C-Down>", ":resize +2<CR>", opts)
-" keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-" keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
-" 
-" -- No arrow keys --- force yourself to use the home row
-" keymap("n", "<Up>", '', opts)
-" keymap("n", "<Down>", '', opts)
-" 
-" keymap("i", "<Up>", "", opts)
-" keymap("i", "<Down>", "", opts)
-" keymap("i", "<Left>", "", opts)
-" keymap("i", "<Right>", "", opts)
-" 
-" --Left and right can switch buffers
-" keymap("n", "<Left>", ":bp<CR>", opts)
-" keymap("n", "<Right>", ":bn<CR>", opts)
-" 
-" keymap("n", "<C-l>", ":nohl<CR>", opts)
-" 
-" keymap("n", "<C-s>", "<Esc>:update<CR>", opts)
-" keymap("i", "<C-s>", "<Esc>:update<CR>", opts)
-" keymap("n", "<Leader>w", ":w<CR>", opts)
-" keymap("n", "<Leader>q", ":q<CR>", opts)
-" keymap("n", "<Leader>e", ":Lexplore<CR>", opts)
-" vim.cmd([[
-"   " Permanent undo: u - undo, Ctrl r - redo
-"   set undodir=~/.vimdid
-"   set undofile
-"   " Show those damn hidden characters
-"   " Verbose: set listchars=nbsp:¬,eol:¶,extends:»,precedes:«,trail:•
-"   set listchars=nbsp:¬,extends:»,precedes:«,trail:•
-" ]])
-
-" -- Switch buffers
-" --keymap("n", "<Leader>-<Leader>", "c-^", opts)
-" --keymap("n", "<C-t>", "c-^", opts)
-" vim.cmd([[
-"   "Switch buffers
-"   nnoremap <leader><leader> <c-^>
-"   nnoremap <c-t> <c-^>
-" ]])
-" EOF
-
-" lua require('lua/keybindings')
+EOF
+lua require('lua/keybindings')
 "lua require('lua/lua-ls')
+" End .vim to .lua
+
+" Show those damn hidden characters
+" Verbose: set listchars=nbsp:¬,eol:¶,extends:»,precedes:«,trail:•
+set listchars=nbsp:¬,extends:»,precedes:«,trail:•
 
 " nnoremap
 let mapleader = "\<Space>"
@@ -152,6 +66,9 @@ nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
 nnoremap <silent> ]B :blast<CR>
 
+" Switch buffers
+nnoremap <leader><leader> <c-^>
+nnoremap <c-t> <c-^>
 
 " Ctrl+j and Ctrl+k as Esc
 " Ctrl-j is a little awkward unfortunately:
@@ -210,13 +127,14 @@ nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
 
+
+
 " Search results centered please
 nnoremap <silent> n nzz
 nnoremap <silent> N Nzz
 nnoremap <silent> * *zz
 nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
-
 
 " Very magic by default
 nnoremap ? ?\v
@@ -225,6 +143,18 @@ cnoremap %s/ %sm/
 
 " Open new file adjacent to current file
 nnoremap <leader>o :e <C-R>=expand("%:p:h") . "/" <CR>
+
+" No arrow keys --- force yourself to use the home row
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
+" Left and right can switch buffers
+nnoremap <left> :bp<CR>
+nnoremap <right> :bn<CR>
 
 " Move by line
 nnoremap j gj
@@ -238,6 +168,8 @@ autocmd BufRead *.tex set filetype=tex
 autocmd BufRead *.trm set filetype=c
 autocmd BufRead *.xlsx.axlsx set filetype=ruby
 
+
+
 " Run :Black 
 autocmd FileType python nnoremap <leader>b :Black<CR> 
 autocmd FileType rust nnoremap <leader>b :RustFmt<CR> 
@@ -248,9 +180,6 @@ autocmd FileType rust nnoremap <leader>b :RustFmt<CR>
 nnoremap gr :grep -Ii <cword> %:p:h/*<CR>
 nnoremap Gr :grep <cword> %:p:h/*<CR>
 nnoremap GR :grep '\b<cword>\b' %:p:h/*<CR>
-
-
-
 
 " autocmd to run scripts
 " :!python % - send all lines from buffer to python
@@ -268,14 +197,19 @@ autocmd filetype cpp inoremap <F5> <ESC> :w <CR> :!g++ -std=c++17 -Wall -Wextra 
 " inoremap <F9> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< <CR>
 " autocmd filetype cpp noremap <F10> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< < inp<CR>
 " autocmd filetype cpp inoremap <F10> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o "%<" "%" && "./%<" < inp<CR>
+
 autocmd filetype rust nnoremap <buffer> <leader>5 :!cargo run<CR>
 
 noremap <F6> :make<CR>
 noremap <F7> :make<BAR>copen<CR>
 
 "ctags p.257, tip 103 
-nnoremap <leader>c :!ctags -R --languages=python --python-kinds=-i --exclude=.git --exclude=venv<CR>
+nnoremap <leader>e :!ctags -R --languages=python --python-kinds=-i --exclude=.git --exclude=venv<CR>
 set tags=tags
+
+" Permanent undo: u - undo, Ctrl r - redo
+set undodir=~/.vimdid
+set undofile
 
 " Gui settings
 set guioptions-=T " Remove toolbar
@@ -288,9 +222,6 @@ set synmaxcol=500
 set laststatus=2
 set showcmd " Show (partial) command in status line.
 set shortmess+=c " don't give |ins-completion-menu| messages.
-
-
-lua require('plugins')
 
 " del, it is in the end let g:python3_host_prog = '/usr/local/bin/python3'
 let s:plug_dir = expand('~/.config/nvim/plugged')
@@ -346,7 +277,7 @@ call plug#begin(s:plug_dir)
    Plug 'nanotech/jellybeans.vim'
 
    " LSP 
-   "packer:Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
    " Autocompletion
    " https://github.com/hrsh7th/nvim-cmp
    Plug 'neovim/nvim-lspconfig'
@@ -375,18 +306,16 @@ let g:black_linelength = 120
 " F8 - Next random color scheme
 "colorscheme base16-gruvbox-dark-hard " Good for programming, used in Rust videos 
 " colorscheme base16-helios " Very pleasant for TeX: pink + green (izumrude) + light orange
+colorscheme gruvbox
 "colorscheme Monokai
 " colorscheme h80
 "colorscheme jellybeans
-colorscheme gruvbox
-
 
 " Telescope
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-
 
 " FZF
 map <leader>f :GFiles<CR>
@@ -412,8 +341,7 @@ runtime settings-lightline.vim
 runtime settings-ultisnips.vim
 " runtime settings-lsp-coc.vim - Clashes with UltiSnips
 
-" Important: have it at the end.
+" !!! Important: set at the END !!!
 "https://neovim.io/doc/user/provider.html
 "let g:python_host_prog = '/home/al/.pyenv/shims/python'
 let g:python3_host_prog = '/home/al/.pyenv/shims/python3'
-
