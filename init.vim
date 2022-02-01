@@ -251,8 +251,6 @@ nnoremap GR :grep '\b<cword>\b' %:p:h/*<CR>
 
 
 
-
-
 " autocmd to run scripts
 " :!python % - send all lines from buffer to python
 autocmd FileType python nnoremap <buffer> <leader>5 :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
@@ -278,14 +276,6 @@ noremap <F7> :make<BAR>copen<CR>
 nnoremap <leader>e :!ctags -R --languages=python --python-kinds=-i --exclude=.git --exclude=venv<CR>
 set tags=tags
 
-
-
-
-
-
-
-
-
 " Gui settings
 set guioptions-=T " Remove toolbar
 set backspace=2 " Backspace over newlines
@@ -299,84 +289,84 @@ set showcmd " Show (partial) command in status line.
 set shortmess+=c " don't give |ins-completion-menu| messages.
 
 
-
+lua require('plugins')
 
 " del, it is in the end let g:python3_host_prog = '/usr/local/bin/python3'
-let s:plug_dir = expand('~/.config/nvim/plugged')
+"let s:plug_dir = expand('~/.config/nvim/plugged')
 " Add Telescope, FZF, Rg
-call plug#begin(s:plug_dir)
+"call plug#begin(s:plug_dir)
   " :PlugInstall
   " Put plug.vim into autoload folder
   " https://github.com/junegunn/vim-plug
   " sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-   " Telescope
-   Plug 'nvim-lua/popup.nvim'
-   Plug 'nvim-lua/plenary.nvim'
-   Plug 'nvim-telescope/telescope.nvim' 
+   "packer: " Telescope
+   "packer: Plug 'nvim-lua/popup.nvim'
+   "packer: Plug 'nvim-lua/plenary.nvim'
+   "packer: Plug 'nvim-telescope/telescope.nvim' 
 
-  " Fuzzy search
-   Plug 'airblade/vim-rooter'
-   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-   Plug 'junegunn/fzf.vim'
+  ""packer:  Fuzzy search
+   "packer: Plug 'airblade/vim-rooter'
+   "packer: Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+   "packer: Plug 'junegunn/fzf.vim'
 
-   Plug 'rbgrouleff/bclose.vim'
-   Plug 'francoiscabrol/ranger.vim' " If you use neovim, you have to add the dependency to the plugin bclose.vim
+   "packer: Plug 'rbgrouleff/bclose.vim'
+   "packer: Plug 'francoiscabrol/ranger.vim' " If you use neovim, you have to add the dependency to the plugin bclose.vim
 
-   Plug 'jiangmiao/auto-pairs'
+   "packer: Plug 'jiangmiao/auto-pairs'
 
-   " Snippets
-   " :UltiSnipsEdit
-   " :Snippets - explore snippets
-   " Ctrl j Jump to next 
-   Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+   "packer: " Snippets
+   "packer: " :UltiSnipsEdit
+   "packer: " :Snippets - explore snippets
+   "packer: " Ctrl j Jump to next 
+   "packer: Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
-   " Git
-   Plug 'tpope/vim-fugitive'
-   " Keys: [c , ]c to jump between changes
-   Plug 'airblade/vim-gitgutter'
-   " Show diffs
-   Plug 'mhinz/vim-signify'
-   " Browse commits :GV, :GV!
-   Plug 'junegunn/gv.vim'
+   "packer: " Git
+   "packer: Plug 'tpope/vim-fugitive'
+   "packer: " Keys: [c , ]c to jump between changes
+   "packer: Plug 'airblade/vim-gitgutter'
+   "packer: " Show diffs
+   "packer: Plug 'mhinz/vim-signify'
+   "packer: " Browse commits :GV, :GV!
+   "packer: Plug 'junegunn/gv.vim'
 
 
-   " Colors
-   " Switch color schemes:
-   " https://github.com/xolox/vim-colorscheme-switcher
-   Plug 'flazz/vim-colorschemes'
-   Plug 'xolox/vim-misc'
-   Plug 'xolox/vim-colorscheme-switcher' " Press F8 to switch color theme!
+   "packer: " Colors
+   "packer: " Switch color schemes:
+   "packer: " https://github.com/xolox/vim-colorscheme-switcher
+   "packer: Plug 'flazz/vim-colorschemes'
+   "packer: Plug 'xolox/vim-misc'
+   "packer: Plug 'xolox/vim-colorscheme-switcher' " Press F8 to switch color theme!
 
-   Plug 'reyemxela/base16-helios-scheme'
-   Plug 'morhetz/gruvbox'
-   Plug 'reyemxela/base16-helios-scheme'
-   Plug 'chriskempson/base16-vim'
-   Plug 'nanotech/jellybeans.vim'
+   "packer: Plug 'reyemxela/base16-helios-scheme'
+   "packer: Plug 'morhetz/gruvbox'
+   "packer: Plug 'reyemxela/base16-helios-scheme'
+   "packer: Plug 'chriskempson/base16-vim'
+   "packer: Plug 'nanotech/jellybeans.vim'
 
-   " LSP 
-   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-   " Autocompletion
-   " https://github.com/hrsh7th/nvim-cmp
-   Plug 'neovim/nvim-lspconfig'
-   Plug 'hrsh7th/cmp-nvim-lsp'
-   Plug 'hrsh7th/cmp-buffer'
-   Plug 'hrsh7th/cmp-path'
-   Plug 'hrsh7th/cmp-cmdline'
-   Plug 'hrsh7th/nvim-cmp'
+   "packer: " LSP 
+   "packer: "packer:Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+   "packer: " Autocompletion
+   "packer: " https://github.com/hrsh7th/nvim-cmp
+   "packer: Plug 'neovim/nvim-lspconfig'
+   "packer: Plug 'hrsh7th/cmp-nvim-lsp'
+   "packer: Plug 'hrsh7th/cmp-buffer'
+   "packer: Plug 'hrsh7th/cmp-path'
+   "packer: Plug 'hrsh7th/cmp-cmdline'
+   "packer: Plug 'hrsh7th/nvim-cmp'
 
-   Plug 'google/vim-searchindex'
-   "Plug 'vim-airline/vim-airline'
-   " Instead of airline:
-   Plug 'itchyny/lightline.vim'
-   Plug 'sheerun/vim-polyglot'
+   "packer: Plug 'google/vim-searchindex'
+   "packer: "Plug 'vim-airline/vim-airline'
+   "packer: " Instead of airline:
+   "packer: Plug 'itchyny/lightline.vim'
+   "packer: Plug 'sheerun/vim-polyglot'
 
-   Plug 'psf/black', { 'branch': 'stable' }
+   "packer: Plug 'psf/black', { 'branch': 'stable' }
   
    " Coc - Clashes with Ultisnips
    " Use release branch (recommend)
    "P lug 'neoclide/coc.nvim', {'branch': 'release'}   
-call plug#end()
+"call plug#end()
 
 let g:black_linelength = 120
 
@@ -384,11 +374,10 @@ let g:black_linelength = 120
 " F8 - Next random color scheme
 "colorscheme base16-gruvbox-dark-hard " Good for programming, used in Rust videos 
 " colorscheme base16-helios " Very pleasant for TeX: pink + green (izumrude) + light orange
-colorscheme gruvbox
 "colorscheme Monokai
 " colorscheme h80
 "colorscheme jellybeans
-
+colorscheme gruvbox
 
 
 " Telescope
@@ -415,11 +404,11 @@ nnoremap <leader>s "zyiw:exe ":Rg ".@z.""<CR>
 let g:ranger_map_keys = 0
 map <leader>r :Ranger<CR>
 
-runtime settings-autocomple.vim
-runtime settings-lsp.vim
-runtime settings-nvim-cmp.vim
-runtime settings-lightline.vim
-runtime settings-ultisnips.vim
+"runtime settings-autocomple.vim
+"runtime settings-lsp.vim
+"runtime settings-nvim-cmp.vim
+"runtime settings-lightline.vim
+"runtime settings-ultisnips.vim
 " runtime settings-lsp-coc.vim - Clashes with UltiSnips
 
 " Important: have it at the end.
