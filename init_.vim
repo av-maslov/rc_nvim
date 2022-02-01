@@ -4,146 +4,147 @@
 " Run :checkhealth
 " =============================================== "
 "
-"lua: set nocompatible
-"lua: filetype plugin indent on
-"lua: syntax on
-"lua: syntax enable
-"lua: set encoding=utf-8
-"lua: set wrap
-"lua: set linebreak
-"lua: set relativenumber
-"lua: set noswapfile
-"lua: set number
+set nocompatible
+filetype plugin indent on
+syntax on
+syntax enable
+set encoding=utf-8
+set wrap
+set linebreak
+set relativenumber
+set noswapfile
+set number
 " Cursorline 
-"lua: set cursorline
-"lua: hi CursorLine term=bold cterm=bold guibg=Grey40
-"lua: au Filetype tex set spell
-"lua: set mouse=a " Enable mouse usage (all modes) in terminals
-"lua: set autochdir
-"lua: set autoread
-"lua: set vb t_vb= " No more beeps
-"lua: set diffopt+=iwhite " No whitespace in vimdiff
-"lua: " Make diffing better: https://vimways.org/2018/the-power-of-diff/
-"lua: set diffopt+=algorithm:patience
-"lua: set diffopt+=indent-heuristic
-"lua: set colorcolumn=80 " and give me a colored column
+set cursorline
+hi CursorLine term=bold cterm=bold guibg=Grey40
+au Filetype tex set spell
+set mouse=a " Enable mouse usage (all modes) in terminals
+set autochdir
+set autoread
+set vb t_vb= " No more beeps
+set diffopt+=iwhite " No whitespace in vimdiff
+" Make diffing better: https://vimways.org/2018/the-power-of-diff/
+set diffopt+=algorithm:patience
+set diffopt+=indent-heuristic
+set colorcolumn=80 " and give me a colored column
 
 " Porting lua
 "
 " Done:
-"lua: set expandtab
-"lua: set tabstop=4
-"lua: set shiftwidth=4
-"lua: set softtabstop=4
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 "
 " No arrow keys --- force yourself to use the home row
-"lua: nnoremap <up> <nop>
-"lua: nnoremap <down> <nop>
-"lua: inoremap <up> <nop>
-"lua: inoremap <down> <nop>
-"lua: inoremap <left> <nop>
-"lua: inoremap <right> <nop>
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
 
 " Left and right can switch buffers
-"lua: nnoremap <left> :bp<CR>
-"lua: nnoremap <right> :bn<CR>
+nnoremap <left> :bp<CR>
+nnoremap <right> :bn<CR>
 
-lua << EOF
-vim.cmd([[
-  set nocompatible
-  filetype plugin indent on
-  set noswapfile
-  syntax on
-  syntax enable
-  set encoding=utf-8
-]])
+" lua << EOF
+" vim.cmd([[
+"   set nocompatible
+"   filetype plugin indent on
+"   set noswapfile
+"   syntax on
+"   syntax enable
+"   set encoding=utf-8
+" ]])
+" 
+" vim.o.wrap = true 
+" vim.o.linebreak=true
+" vim.o.relativenumber=true
+" vim.o.number=true
+" 
+" local set = vim.opt
+" set.cursorline = true
+" vim.cmd([[
+"   hi CursorLine term=bold cterm=bold guibg=Grey40
+"   au Filetype tex set spell
+"   set mouse=a " Enable mouse usage (all modes) in terminals
+"   set autochdir
+"   set autoread
+"   set vb t_vb= " No more beeps
+"   set diffopt+=iwhite " No whitespace in vimdiff
+"   " Make diffing better: https://vimways.org/2018/the-power-of-diff/
+"   set diffopt+=algorithm:patience
+"   set diffopt+=indent-heuristic
+" ]])
+" -- Set the behavior of tab
+" set.expandtab = true
+" set.tabstop = 2
+" set.softtabstop = 2
+" set.shiftwidth = 2
+" 
+" vim.wo.colorcolumn = '80'
+" 
+" -- use space as a the leader key
+" vim.g.mapleader = ' '
+" local keymap = vim.api.nvim_set_keymap
+" local opts = { noremap = true, silent = true }
+" keymap("n", "<C-Up>", ":resize -2<CR>", opts)
+" keymap("n", "<C-Down>", ":resize +2<CR>", opts)
+" keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
+" keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+" 
+" -- No arrow keys --- force yourself to use the home row
+" keymap("n", "<Up>", '', opts)
+" keymap("n", "<Down>", '', opts)
+" 
+" keymap("i", "<Up>", "", opts)
+" keymap("i", "<Down>", "", opts)
+" keymap("i", "<Left>", "", opts)
+" keymap("i", "<Right>", "", opts)
+" 
+" --Left and right can switch buffers
+" keymap("n", "<Left>", ":bp<CR>", opts)
+" keymap("n", "<Right>", ":bn<CR>", opts)
+" 
+" keymap("n", "<C-l>", ":nohl<CR>", opts)
+" 
+" keymap("n", "<C-s>", "<Esc>:update<CR>", opts)
+" keymap("i", "<C-s>", "<Esc>:update<CR>", opts)
+" keymap("n", "<Leader>w", ":w<CR>", opts)
+" keymap("n", "<Leader>q", ":q<CR>", opts)
+" keymap("n", "<Leader>e", ":Lexplore<CR>", opts)
+" vim.cmd([[
+"   " Permanent undo: u - undo, Ctrl r - redo
+"   set undodir=~/.vimdid
+"   set undofile
+"   " Show those damn hidden characters
+"   " Verbose: set listchars=nbsp:¬,eol:¶,extends:»,precedes:«,trail:•
+"   set listchars=nbsp:¬,extends:»,precedes:«,trail:•
+" ]])
 
-vim.o.wrap = true 
-vim.o.linebreak=true
-vim.o.relativenumber=true
-vim.o.number=true
-
-local set = vim.opt
-set.cursorline = true
-vim.cmd([[
-  hi CursorLine term=bold cterm=bold guibg=Grey40
-  au Filetype tex set spell
-  set mouse=a " Enable mouse usage (all modes) in terminals
-  set autochdir
-  set autoread
-  set vb t_vb= " No more beeps
-  set diffopt+=iwhite " No whitespace in vimdiff
-  " Make diffing better: https://vimways.org/2018/the-power-of-diff/
-  set diffopt+=algorithm:patience
-  set diffopt+=indent-heuristic
-]])
--- Set the behavior of tab
-set.expandtab = true
-set.tabstop = 2
-set.softtabstop = 2
-set.shiftwidth = 2
-
-vim.wo.colorcolumn = '80'
-
--- use space as a the leader key
-vim.g.mapleader = ' '
-local keymap = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
-keymap("n", "<C-Up>", ":resize -2<CR>", opts)
-keymap("n", "<C-Down>", ":resize +2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
-
--- No arrow keys --- force yourself to use the home row
-keymap("n", "<Up>", '', opts)
-keymap("n", "<Down>", '', opts)
-
-keymap("i", "<Up>", "", opts)
-keymap("i", "<Down>", "", opts)
-keymap("i", "<Left>", "", opts)
-keymap("i", "<Right>", "", opts)
-
---Left and right can switch buffers
-keymap("n", "<Left>", ":bp<CR>", opts)
-keymap("n", "<Right>", ":bn<CR>", opts)
-
-keymap("n", "<C-l>", ":nohl<CR>", opts)
-
-keymap("n", "<C-s>", "<Esc>:update<CR>", opts)
-keymap("i", "<C-s>", "<Esc>:update<CR>", opts)
-keymap("n", "<Leader>w", ":w<CR>", opts)
-keymap("n", "<Leader>q", ":q<CR>", opts)
-vim.cmd([[
-  " Permanent undo: u - undo, Ctrl r - redo
-  set undodir=~/.vimdid
-  set undofile
-  " Show those damn hidden characters
-  " Verbose: set listchars=nbsp:¬,eol:¶,extends:»,precedes:«,trail:•
-  set listchars=nbsp:¬,extends:»,precedes:«,trail:•
-]])
-
--- Switch buffers
---keymap("n", "<Leader>-<Leader>", "c-^", opts)
---keymap("n", "<C-t>", "c-^", opts)
-vim.cmd([[
-  "Switch buffers
-  nnoremap <leader><leader> <c-^>
-  nnoremap <c-t> <c-^>
-]])
-EOF
+" -- Switch buffers
+" --keymap("n", "<Leader>-<Leader>", "c-^", opts)
+" --keymap("n", "<C-t>", "c-^", opts)
+" vim.cmd([[
+"   "Switch buffers
+"   nnoremap <leader><leader> <c-^>
+"   nnoremap <c-t> <c-^>
+" ]])
+" EOF
 
 " lua require('lua/keybindings')
 "lua require('lua/lua-ls')
 
 " nnoremap
-"lua: let mapleader = "\<Space>"
-"lua:nnoremap <silent> <C-l> :nohl<CR> "<C-l>
+let mapleader = "\<Space>"
+nnoremap <silent> <C-l> :nohl<CR> "<C-l>
 " Save file in edit mode
-"inoremap <c-s> <Esc>:update<CR>
-"nnoremap <c-s> <Esc>:update<CR>
+inoremap <c-s> <Esc>:update<CR>
+nnoremap <c-s> <Esc>:update<CR>
 " Save file in normal mode
-"nmap <leader>w :w<CR>
-"nmap <leader>q :q<CR>
+nmap <leader>w :w<CR>
+nmap <leader>q :q<CR>
 
 " Buffers navigation page 85, tip 37
 nnoremap <silent> [b :bprevious<CR>
@@ -273,7 +274,7 @@ noremap <F6> :make<CR>
 noremap <F7> :make<BAR>copen<CR>
 
 "ctags p.257, tip 103 
-nnoremap <leader>e :!ctags -R --languages=python --python-kinds=-i --exclude=.git --exclude=venv<CR>
+nnoremap <leader>c :!ctags -R --languages=python --python-kinds=-i --exclude=.git --exclude=venv<CR>
 set tags=tags
 
 " Gui settings
@@ -292,81 +293,81 @@ set shortmess+=c " don't give |ins-completion-menu| messages.
 lua require('plugins')
 
 " del, it is in the end let g:python3_host_prog = '/usr/local/bin/python3'
-"let s:plug_dir = expand('~/.config/nvim/plugged')
+let s:plug_dir = expand('~/.config/nvim/plugged')
 " Add Telescope, FZF, Rg
-"call plug#begin(s:plug_dir)
+call plug#begin(s:plug_dir)
   " :PlugInstall
   " Put plug.vim into autoload folder
   " https://github.com/junegunn/vim-plug
   " sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-   "packer: " Telescope
-   "packer: Plug 'nvim-lua/popup.nvim'
-   "packer: Plug 'nvim-lua/plenary.nvim'
-   "packer: Plug 'nvim-telescope/telescope.nvim' 
+   " Telescope
+   Plug 'nvim-lua/popup.nvim'
+   Plug 'nvim-lua/plenary.nvim'
+   Plug 'nvim-telescope/telescope.nvim' 
 
-  ""packer:  Fuzzy search
-   "packer: Plug 'airblade/vim-rooter'
-   "packer: Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-   "packer: Plug 'junegunn/fzf.vim'
+  " Fuzzy search
+   Plug 'airblade/vim-rooter'
+   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+   Plug 'junegunn/fzf.vim'
 
-   "packer: Plug 'rbgrouleff/bclose.vim'
-   "packer: Plug 'francoiscabrol/ranger.vim' " If you use neovim, you have to add the dependency to the plugin bclose.vim
+   Plug 'rbgrouleff/bclose.vim'
+   Plug 'francoiscabrol/ranger.vim' " If you use neovim, you have to add the dependency to the plugin bclose.vim
 
-   "packer: Plug 'jiangmiao/auto-pairs'
+   Plug 'jiangmiao/auto-pairs'
 
-   "packer: " Snippets
-   "packer: " :UltiSnipsEdit
-   "packer: " :Snippets - explore snippets
-   "packer: " Ctrl j Jump to next 
-   "packer: Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+   " Snippets
+   " :UltiSnipsEdit
+   " :Snippets - explore snippets
+   " Ctrl j Jump to next 
+   Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
-   "packer: " Git
-   "packer: Plug 'tpope/vim-fugitive'
-   "packer: " Keys: [c , ]c to jump between changes
-   "packer: Plug 'airblade/vim-gitgutter'
-   "packer: " Show diffs
-   "packer: Plug 'mhinz/vim-signify'
-   "packer: " Browse commits :GV, :GV!
-   "packer: Plug 'junegunn/gv.vim'
+   " Git
+   Plug 'tpope/vim-fugitive'
+   " Keys: [c , ]c to jump between changes
+   Plug 'airblade/vim-gitgutter'
+   " Show diffs
+   Plug 'mhinz/vim-signify'
+   " Browse commits :GV, :GV!
+   Plug 'junegunn/gv.vim'
 
 
-   "packer: " Colors
-   "packer: " Switch color schemes:
-   "packer: " https://github.com/xolox/vim-colorscheme-switcher
-   "packer: Plug 'flazz/vim-colorschemes'
-   "packer: Plug 'xolox/vim-misc'
-   "packer: Plug 'xolox/vim-colorscheme-switcher' " Press F8 to switch color theme!
+   " Colors
+   " Switch color schemes:
+   " https://github.com/xolox/vim-colorscheme-switcher
+   Plug 'flazz/vim-colorschemes'
+   Plug 'xolox/vim-misc'
+   Plug 'xolox/vim-colorscheme-switcher' " Press F8 to switch color theme!
 
-   "packer: Plug 'reyemxela/base16-helios-scheme'
-   "packer: Plug 'morhetz/gruvbox'
-   "packer: Plug 'reyemxela/base16-helios-scheme'
-   "packer: Plug 'chriskempson/base16-vim'
-   "packer: Plug 'nanotech/jellybeans.vim'
+   Plug 'reyemxela/base16-helios-scheme'
+   Plug 'morhetz/gruvbox'
+   Plug 'reyemxela/base16-helios-scheme'
+   Plug 'chriskempson/base16-vim'
+   Plug 'nanotech/jellybeans.vim'
 
-   "packer: " LSP 
-   "packer: "packer:Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-   "packer: " Autocompletion
-   "packer: " https://github.com/hrsh7th/nvim-cmp
-   "packer: Plug 'neovim/nvim-lspconfig'
-   "packer: Plug 'hrsh7th/cmp-nvim-lsp'
-   "packer: Plug 'hrsh7th/cmp-buffer'
-   "packer: Plug 'hrsh7th/cmp-path'
-   "packer: Plug 'hrsh7th/cmp-cmdline'
-   "packer: Plug 'hrsh7th/nvim-cmp'
+   " LSP 
+   "packer:Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+   " Autocompletion
+   " https://github.com/hrsh7th/nvim-cmp
+   Plug 'neovim/nvim-lspconfig'
+   Plug 'hrsh7th/cmp-nvim-lsp'
+   Plug 'hrsh7th/cmp-buffer'
+   Plug 'hrsh7th/cmp-path'
+   Plug 'hrsh7th/cmp-cmdline'
+   Plug 'hrsh7th/nvim-cmp'
 
-   "packer: Plug 'google/vim-searchindex'
-   "packer: "Plug 'vim-airline/vim-airline'
-   "packer: " Instead of airline:
-   "packer: Plug 'itchyny/lightline.vim'
-   "packer: Plug 'sheerun/vim-polyglot'
+   Plug 'google/vim-searchindex'
+   "Plug 'vim-airline/vim-airline'
+   " Instead of airline:
+   Plug 'itchyny/lightline.vim'
+   Plug 'sheerun/vim-polyglot'
 
-   "packer: Plug 'psf/black', { 'branch': 'stable' }
+   Plug 'psf/black', { 'branch': 'stable' }
   
    " Coc - Clashes with Ultisnips
    " Use release branch (recommend)
    "P lug 'neoclide/coc.nvim', {'branch': 'release'}   
-"call plug#end()
+call plug#end()
 
 let g:black_linelength = 120
 
@@ -404,11 +405,11 @@ nnoremap <leader>s "zyiw:exe ":Rg ".@z.""<CR>
 let g:ranger_map_keys = 0
 map <leader>r :Ranger<CR>
 
-"runtime settings-autocomple.vim
-"runtime settings-lsp.vim
-"runtime settings-nvim-cmp.vim
-"runtime settings-lightline.vim
-"runtime settings-ultisnips.vim
+runtime settings-autocomple.vim
+runtime settings-lsp.vim
+runtime settings-nvim-cmp.vim
+runtime settings-lightline.vim
+runtime settings-ultisnips.vim
 " runtime settings-lsp-coc.vim - Clashes with UltiSnips
 
 " Important: have it at the end.
@@ -416,6 +417,3 @@ map <leader>r :Ranger<CR>
 "let g:python_host_prog = '/home/al/.pyenv/shims/python'
 let g:python3_host_prog = '/home/al/.pyenv/shims/python3'
 
-lua <<EOF
-print('simple')
-EOF
