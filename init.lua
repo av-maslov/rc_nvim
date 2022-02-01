@@ -18,6 +18,27 @@ vim.o.number=true
 
 local set = vim.opt
 set.cursorline = true
+
+-- Set the behavior of tab
+set.expandtab = true
+set.tabstop = 2
+set.softtabstop = 2
+set.shiftwidth = 2
+
+vim.wo.colorcolumn = '80'
+
+
+-- Permanent undo: u - undo, Ctrl r - redo
+vim.cmd([[
+  set undodir=~/.vimdid
+  set undofile
+]])
+
+-- Show those damn hidden characters
+vim.cmd([[
+  set listchars=nbsp:¬,extends:»,precedes:«,trail:•
+]])
+
 vim.cmd([[
   hi CursorLine term=bold cterm=bold guibg=Grey40
   au Filetype tex set spell
@@ -30,21 +51,13 @@ vim.cmd([[
   set diffopt+=algorithm:patience
   set diffopt+=indent-heuristic
 ]])
--- Set the behavior of tab
-set.expandtab = true
-set.tabstop = 2
-set.softtabstop = 2
-set.shiftwidth = 2
 
-vim.wo.colorcolumn = '80'
-
+-- Gui settings
 vim.cmd([[
-  " Gui settings
   set guioptions-=T " Remove toolbar
   set backspace=2 " Backspace over newlines
   set nofoldenable
   set ttyfast
-  " https://github.com/vim/vim/issues/1735#issuecomment-383353563
   set lazyredraw
   set synmaxcol=500
   set laststatus=2
@@ -52,17 +65,23 @@ vim.cmd([[
   set shortmess+=c " don't give |ins-completion-menu| messages.
 ]])
 
+-- Colors
+-- F8 - Next random color scheme
 vim.cmd([[
-  " Colors
-  " F8 - Next random color scheme
   "colorscheme base16-gruvbox-dark-hard " Good for programming, used in Rust videos 
-  " colorscheme base16-helios " Very pleasant for TeX: pink + green (izumrude) + light orange
+  "colorscheme base16-helios " Very pleasant for TeX: pink + green (izumrude) + light orange
   "colorscheme Monokai
-  " colorscheme h80
+  "colorscheme h80
   "colorscheme jellybeans
   colorscheme gruvbox
 ]])
 
 vim.cmd([[
   let g:black_linelength = 120
+]])
+
+-- Important have it at the end.
+-- https://neovim.io/doc/user/provider.html
+vim.cmd([[
+  let g:python3_host_prog = '/home/al/.pyenv/shims/python3'
 ]])

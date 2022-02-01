@@ -31,15 +31,6 @@ keymap("n", "<Leader>e", ":Lexplore<CR>", opts)
 --inoremap jk <esc> " Very convenient
 keymap("i", "jk", "<Esc>", opts)
 
-vim.cmd([[
-  " Permanent undo: u - undo, Ctrl r - redo
-  set undodir=~/.vimdid
-  set undofile
-  " Show those damn hidden characters
-  " Verbose: set listchars=nbsp:¬,eol:¶,extends:»,precedes:«,trail:•
-  set listchars=nbsp:¬,extends:»,precedes:«,trail:•
-]])
-
 -- Switch buffers
 --keymap("n", "<Leader>-<Leader>", "c-^", opts)
 --keymap("n", "<C-t>", "c-^", opts)
@@ -119,14 +110,14 @@ vim.cmd([[
 ]])
 
 
+-- Run :Black 
 vim.cmd([[
-  " Run :Black 
   autocmd FileType python nnoremap <leader>b :Black<CR> 
   autocmd FileType rust nnoremap <leader>b :RustFmt<CR> 
-  " Or, run on save
-  " autocmd BufWritePre *.py execute ':Black'
-  
-  " https://vim.fandom.com/wiki/Search_for_current_word_in_multiple_files
+]])
+
+-- https://vim.fandom.com/wiki/Search_for_current_word_in_multiple_files
+vim.cmd([[
   nnoremap gr :grep -Ii <cword> %:p:h/*<CR>
   nnoremap Gr :grep <cword> %:p:h/*<CR>
   nnoremap GR :grep '\b<cword>\b' %:p:h/*<CR>
@@ -168,7 +159,6 @@ vim.cmd([[
   nnoremap <leader>fb <cmd>Telescope buffers<cr>
   nnoremap <leader>fh <cmd>Telescope help_tags<cr>
   
-  
   " FZF
   map <leader>f :GFiles<CR>
   map <leader>F :Locate /<CR>
@@ -199,9 +189,3 @@ vim.cmd([[
 ]])
 
 
-vim.cmd([[
-  " Important: have it at the end.
-  "https://neovim.io/doc/user/provider.html
-  "let g:python_host_prog = '/home/al/.pyenv/shims/python'
-  let g:python3_host_prog = '/home/al/.pyenv/shims/python3'
-]])
