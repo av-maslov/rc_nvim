@@ -1,4 +1,5 @@
 -- use space as a the leader key
+vim.api.nvim_set_keymap("n", "<Space>", "<NOP>", { noremap = true, silent = true })
 vim.g.mapleader = ' '
 
 local keymap = vim.api.nvim_set_keymap
@@ -26,7 +27,7 @@ keymap("n", "<C-s>", "<Esc>:update<CR>", opts)
 keymap("i", "<C-s>", "<Esc>:update<CR>", opts)
 keymap("n", "<Leader>w", ":w<CR>", opts)
 keymap("n", "<Leader>q", ":q<CR>", opts)
-keymap("n", "<Leader>e", ":Lexplore<CR>", opts)
+keymap("n", "<Leader>e", ":NvimTreeToggle<CR>", opts)
 
 --inoremap jk <esc> " Very convenient
 keymap("i", "jk", "<Esc>", opts)
@@ -39,6 +40,11 @@ vim.cmd([[
   nnoremap <c-t> <c-^>
 ]])
 
+keymap("n", "<Leader>t", "<C-w>w<CR>", opts)
+keymap("n", "<Tab>", "<C-w>w<CR>", opts)
+--vim.cmd([[
+--  nnoremap <silent> <leader>t <C-w>w<CR> " Cycle through spli panes 
+--  ]])
 
 vim.cmd([[
   " Ctrl+j and Ctrl+k as Esc
@@ -73,7 +79,6 @@ vim.cmd([[
   nmap <silent> <c-j> :wincmd j<CR>
   nmap <silent> <c-h> :wincmd h<CR>
   "nmap <silent> <c-l> :wincmd l<CR> " Overwrites nohl 
-  nnoremap <silent> <leader>t <C-w>w<CR> " Cycle through spli panes 
   
   " Exit insert mode in the Terminal mode 
   "tnoremap <Esc> <C-\><C-n> "Disables exit from :Rg window

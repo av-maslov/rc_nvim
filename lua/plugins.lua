@@ -113,7 +113,6 @@ return require('packer').startup(function()
    use 'xolox/vim-misc'
    use 'xolox/vim-colorscheme-switcher' --Press F8 to switch color theme!
 
-   use 'reyemxela/base16-helios-scheme'
    use 'morhetz/gruvbox'
    use 'reyemxela/base16-helios-scheme'
    use 'chriskempson/base16-vim'
