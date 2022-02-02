@@ -67,14 +67,23 @@ vim.cmd([[
 
 -- Colors
 -- F8 - Next random color scheme
-vim.cmd([[
-  "colorscheme base16-gruvbox-dark-hard " Good for programming, used in Rust videos 
-  "colorscheme base16-helios " Very pleasant for TeX: pink + green (izumrude) + light orange
-  "colorscheme Monokai
-  "colorscheme h80
-  "colorscheme jellybeans
-  colorscheme gruvbox
-]])
+-- vim.cmd([[
+--   "colorscheme base16-gruvbox-dark-hard " Good for programming, used in Rust videos 
+--   "colorscheme base16-helios " Very pleasant for TeX: pink + green (izumrude) + light orange
+--   "colorscheme Monokai
+--   "colorscheme h80
+--   "colorscheme jellybeans
+--   "colorscheme gruvbox
+-- ]])
+--
+vim.g.vscode_style = "dark"
+vim.g.vscode_transparent = 0
+vim.g.vscode_italic_comment = 1
+vim.cmd[[colorscheme vscode]]
+--vim.cmd[[colorscheme borland]]
+--vim.cmd[[colorscheme gruvbox]]
+
+
 
 vim.cmd([[
   let g:black_linelength = 120

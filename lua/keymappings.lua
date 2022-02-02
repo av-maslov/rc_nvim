@@ -4,10 +4,6 @@ vim.g.mapleader = ' '
 
 local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
-keymap("n", "<C-Up>", ":resize -2<CR>", opts)
-keymap("n", "<C-Down>", ":resize +2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- No arrow keys --- force yourself to use the home row
 keymap("n", "<Up>", '', opts)
@@ -16,21 +12,39 @@ keymap("i", "<Up>", "", opts)
 keymap("i", "<Down>", "", opts)
 keymap("i", "<Left>", "", opts)
 keymap("i", "<Right>", "", opts)
-
---Left and right can switch buffers
+-- Left and right can switch buffers
 keymap("n", "<Left>", ":bp<CR>", opts)
 keymap("n", "<Right>", ":bn<CR>", opts)
-
-keymap("n", "<C-l>", ":nohl<CR>", opts)
-
+-- No Esc : jk to <esc> - very convenient
+keymap("i", "jk", "<Esc>", opts)
+keymap("i", "kj", "<Esc>", opts)
+keymap("i", "jj", "<Esc>", opts)
+-- Nohl
+keymap("n", "<C-b>", ":nohl<CR>", opts)
+-- Save
 keymap("n", "<C-s>", "<Esc>:update<CR>", opts)
 keymap("i", "<C-s>", "<Esc>:update<CR>", opts)
 keymap("n", "<Leader>w", ":w<CR>", opts)
+-- Quit
 keymap("n", "<Leader>q", ":q<CR>", opts)
+-- Explore
 keymap("n", "<Leader>e", ":NvimTreeToggle<CR>", opts)
-
---inoremap jk <esc> " Very convenient
-keymap("i", "jk", "<Esc>", opts)
+-- Swithc split panes
+keymap("n", "<C-h>", "<C-w>h", {silent = true})
+keymap("n", "<C-j>", "<C-w>j", {silent = true})
+keymap("n", "<C-k>", "<C-w>k", {silent = true})
+keymap("n", "<C-l>", "<C-w>l", {silent = true})
+-- Indentation
+keymap("v", "<", "<gv", opts)
+keymap("v", ">", ">gv", opts)
+-- Resize
+keymap("n", "<C-Up>", ":resize -2<CR>", opts)
+keymap("n", "<C-Down>", ":resize +2<CR>", opts)
+keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
+keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+-- Switch buffers
+keymap("n", "<Tab>", ":bnext<CR>", opts)
+keymap("n", "<S-Tab>", ":bprevious<CR>", opts)
 
 -- Switch buffers
 --keymap("n", "<Leader>-<Leader>", "c-^", opts)
@@ -41,7 +55,7 @@ vim.cmd([[
 ]])
 
 keymap("n", "<Leader>t", "<C-w>w<CR>", opts)
-keymap("n", "<Tab>", "<C-w>w<CR>", opts)
+--keymap("n", "<Tab>", "<C-w>w<CR>", opts)
 --vim.cmd([[
 --  nnoremap <silent> <leader>t <C-w>w<CR> " Cycle through spli panes 
 --  ]])
@@ -51,25 +65,25 @@ vim.cmd([[
   " Ctrl-j is a little awkward unfortunately:
   " https://github.com/neovim/neovim/issues/5916
   " So we also map Ctrl+k
-  nnoremap <C-j> <Esc>
-  inoremap <C-j> <Esc>
-  vnoremap <C-j> <Esc>
-  snoremap <C-j> <Esc>
-  xnoremap <C-j> <Esc>
-  cnoremap <C-j> <C-c>
-  onoremap <C-j> <Esc>
-  lnoremap <C-j> <Esc>
-  tnoremap <C-j> <Esc>
-  
-  nnoremap <C-k> <Esc>
-  inoremap <C-k> <Esc>
-  vnoremap <C-k> <Esc>
-  snoremap <C-k> <Esc>
-  xnoremap <C-k> <Esc>
-  cnoremap <C-k> <C-c>
-  onoremap <C-k> <Esc>
-  lnoremap <C-k> <Esc>
-  tnoremap <C-k> <Esc>
+  "nnoremap <C-j> <Esc>
+  "inoremap <C-j> <Esc>
+  "vnoremap <C-j> <Esc>
+  "snoremap <C-j> <Esc>
+  "xnoremap <C-j> <Esc>
+  "cnoremap <C-j> <C-c>
+  "onoremap <C-j> <Esc>
+  "lnoremap <C-j> <Esc>
+  "tnoremap <C-j> <Esc>
+  "
+  "nnoremap <C-k> <Esc>
+  "inoremap <C-k> <Esc>
+  "vnoremap <C-k> <Esc>
+  "snoremap <C-k> <Esc>
+  "xnoremap <C-k> <Esc>
+  "cnoremap <C-k> <C-c>
+  "onoremap <C-k> <Esc>
+  "lnoremap <C-k> <Esc>
+  "tnoremap <C-k> <Esc>
   
     " Split panes keys
   nnoremap <silent> <leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>

@@ -117,6 +117,7 @@ return require('packer').startup(function()
    use 'reyemxela/base16-helios-scheme'
    use 'chriskempson/base16-vim'
    use 'nanotech/jellybeans.vim'
+   use 'Mofiqul/vscode.nvim'
 
    -- LSP 
    --Autocompletion
