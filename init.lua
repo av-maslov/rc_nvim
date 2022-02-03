@@ -17,7 +17,7 @@ vim.o.relativenumber=true
 vim.o.number=true
 
 local set = vim.opt
-set.cursorline = true
+--set.cursorline = true
 
 -- Set the behavior of tab
 set.expandtab = true
@@ -25,7 +25,7 @@ set.tabstop = 2
 set.softtabstop = 2
 set.shiftwidth = 2
 
-vim.wo.colorcolumn = '80'
+--vim.wo.colorcolumn = '80'
 
 
 -- Permanent undo: u - undo, Ctrl r - redo
@@ -76,18 +76,18 @@ vim.cmd([[
 --   "colorscheme gruvbox
 -- ]])
 --
-vim.g.vscode_style = "dark"
-vim.g.vscode_transparent = 0
-vim.g.vscode_italic_comment = 1
+-- vim.cmd[[colorscheme borland]]
 -- vim.cmd[[coloscheme base16-gruvbox-dark-hard ]]
 -- vim.cmd[[coloscheme base16-helios]]
 -- vim.cmd[[coloscheme Monokai]]
 -- vim.cmd[[coloscheme h80]]
+
+vim.g.vscode_style = "dark"
+vim.g.vscode_transparent = 0
+vim.g.vscode_italic_comment = 1
 vim.cmd[[colorscheme vscode]]
---vim.cmd[[colorscheme borland]]
+
 --vim.cmd[[colorscheme gruvbox]]
-
-
 
 vim.cmd([[
   let g:black_linelength = 120
