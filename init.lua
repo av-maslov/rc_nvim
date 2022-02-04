@@ -1,5 +1,6 @@
 require('plugins')
 require('keymappings')
+require('settings-nvim-cmp')
 
 -- Is it ON by default in neovim?
 vim.cmd([[
@@ -82,10 +83,13 @@ vim.cmd([[
 -- vim.cmd[[coloscheme Monokai]]
 -- vim.cmd[[coloscheme h80]]
 
+---[[
 vim.g.vscode_style = "dark"
 vim.g.vscode_transparent = 0
 vim.g.vscode_italic_comment = 1
 vim.cmd[[colorscheme vscode]]
+--]]
+--vim.cmd[[colorscheme welpe]]
 
 --vim.cmd[[colorscheme gruvbox]]
 

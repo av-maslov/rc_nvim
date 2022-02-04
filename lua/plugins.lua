@@ -18,27 +18,6 @@ return require('packer').startup(function()
   -- Load on an autocommand event
   use {'andymass/vim-matchup', event = 'VimEnter'}
 
-  -- Load on a combination of conditions: specific filetypes or commands
-  -- Also run code after load (see the "config" key)
-  --use {
-  --  'w0rp/ale',
-  --  ft = {'sh', 'zsh', 'bash', 'c', 'cpp', 'cmake', 'html', 'markdown', 'racket', 'vim', 'tex'},
-  --  cmd = 'ALEEnable',
-  --  config = 'vim.cmd[[ALEEnable]]'
-  --}
-
-  -- useins can have dependencies on other plugins
-  --use {
-  --  'haorenW1025/completion-nvim',
-  --  opt = true,
-  --  requires = {{'hrsh7th/vim-vsnip', opt = true}, {'hrsh7th/vim-vsnip-integ', opt = true}}
-  --}
-
-  -- useins can also depend on rocks from luarocks.org:
-  --use {
-  --  'my/supercoolplugin',
-  --  rocks = {'lpeg', {'lua-cjson', version = '2.1.0'}}
-  --}
 
   -- You can specify rocks in isolation
   use_rocks 'penlight'
@@ -75,9 +54,9 @@ return require('packer').startup(function()
   --use {'dracula/vim', as = 'dracula'}
 
    -- Telescope
-  --use 'nvim-lua/popup.nvim'
-  --use 'nvim-lua/plenary.nvim'
-  --use 'nvim-telescope/telescope.nvim' 
+  use 'nvim-lua/popup.nvim'
+  use 'nvim-lua/plenary.nvim'
+  use 'nvim-telescope/telescope.nvim' 
 
    -- Fuzzy search
    use 'airblade/vim-rooter'
@@ -142,6 +121,28 @@ return require('packer').startup(function()
     },
     config = function() require'nvim-tree'.setup {} end
   }
+
+  -- Load on a combination of conditions: specific filetypes or commands
+  -- Also run code after load (see the "config" key)
+  --use {
+  --  'w0rp/ale',
+  --  ft = {'sh', 'zsh', 'bash', 'c', 'cpp', 'cmake', 'html', 'markdown', 'racket', 'vim', 'tex'},
+  --  cmd = 'ALEEnable',
+  --  config = 'vim.cmd[[ALEEnable]]'
+  --}
+
+  -- useins can have dependencies on other plugins
+  --use {
+  --  'haorenW1025/completion-nvim',
+  --  opt = true,
+  --  requires = {{'hrsh7th/vim-vsnip', opt = true}, {'hrsh7th/vim-vsnip-integ', opt = true}}
+  --}
+
+  -- useins can also depend on rocks from luarocks.org:
+  --use {
+  --  'my/supercoolplugin',
+  --  rocks = {'lpeg', {'lua-cjson', version = '2.1.0'}}
+  --}
 end)
 
 
