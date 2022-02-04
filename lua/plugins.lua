@@ -112,7 +112,7 @@ return require('packer').startup(function()
    use 'itchyny/lightline.vim'
    use 'sheerun/vim-polyglot'
 
-   use 'psf/black'--, { 'branch': 'stable' }
+   use {'psf/black', branch = 'main'}
 
    use {
     'kyazdani42/nvim-tree.lua',

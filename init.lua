@@ -1,6 +1,6 @@
 require('plugins')
 require('keymappings')
-require('settings-nvim-cmp')
+require('nvim-cmp')
 
 -- Is it ON by default in neovim?
 vim.cmd([[

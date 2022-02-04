@@ -204,7 +204,6 @@ vim.cmd([[
   runtime settings-lightline.vim
   runtime settings-ultisnips.vim
   " runtime settings-lsp-coc.vim - Clashes with UltiSnips
-  
 ]])
 
 
