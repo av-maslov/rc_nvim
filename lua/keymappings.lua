@@ -27,6 +27,7 @@ keymap("i", "<C-s>", "<Esc>:update<CR>", opts)
 keymap("n", "<Leader>w", ":w<CR>", opts)
 -- Quit
 keymap("n", "<Leader>q", ":q<CR>", opts)
+keymap("n", "<Leader>k", ":Bclose<CR>", opts)
 -- Explore
 keymap("n", "<Leader>e", ":NvimTreeToggle<CR>", opts)
 -- Swithc split panes
