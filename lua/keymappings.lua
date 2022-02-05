@@ -46,6 +46,9 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Switch buffers
 keymap("n", "<Tab>", ":bnext<CR>", opts)
 keymap("n", "<S-Tab>", ":bprevious<CR>", opts)
+-- Exit insert mode in the Terminal mode 
+--keymap("t", "jk", "<C-\><C-n>")
+vim.cmd([[tnoremap jk <C-\><C-n>]])
 
 -- Switch buffers
 --keymap("n", "<Leader>-<Leader>", "c-^", opts)
@@ -57,77 +60,70 @@ vim.cmd([[
 
 keymap("n", "<Leader>t", "<C-w>w<CR>", opts)
 --keymap("n", "<Tab>", "<C-w>w<CR>", opts)
---vim.cmd([[
---  nnoremap <silent> <leader>t <C-w>w<CR> " Cycle through spli panes 
---  ]])
 
-vim.cmd([[
-  " Ctrl+j and Ctrl+k as Esc
-  " Ctrl-j is a little awkward unfortunately:
-  " https://github.com/neovim/neovim/issues/5916
-  " So we also map Ctrl+k
-  "nnoremap <C-j> <Esc>
-  "inoremap <C-j> <Esc>
-  "vnoremap <C-j> <Esc>
-  "snoremap <C-j> <Esc>
-  "xnoremap <C-j> <Esc>
-  "cnoremap <C-j> <C-c>
-  "onoremap <C-j> <Esc>
-  "lnoremap <C-j> <Esc>
-  "tnoremap <C-j> <Esc>
-  "
-  "nnoremap <C-k> <Esc>
-  "inoremap <C-k> <Esc>
-  "vnoremap <C-k> <Esc>
-  "snoremap <C-k> <Esc>
-  "xnoremap <C-k> <Esc>
-  "cnoremap <C-k> <C-c>
-  "onoremap <C-k> <Esc>
-  "lnoremap <C-k> <Esc>
-  "tnoremap <C-k> <Esc>
-  
-    " Split panes keys
-  nnoremap <silent> <leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
-  nnoremap <silent> <leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
-  " Switch split panes 
-  nmap <silent> <c-k> :wincmd k<CR>
-  nmap <silent> <c-j> :wincmd j<CR>
-  nmap <silent> <c-h> :wincmd h<CR>
-  "nmap <silent> <c-l> :wincmd l<CR> " Overwrites nohl 
-  
-  " Exit insert mode in the Terminal mode 
-  "tnoremap <Esc> <C-\><C-n> "Disables exit from :Rg window
-  tnoremap jk <C-\><C-n>
-  "tnoremap <C-C> <C-\><C-n><C-w>w
-  " tnoremap <C-w>j <C-\><C-n><C-w>j
-  
-    " Search results centered please
-  nnoremap <silent> n nzz
-  nnoremap <silent> N Nzz
-  nnoremap <silent> * *zz
-  nnoremap <silent> # #zz
-  nnoremap <silent> g* g*zz
-  
-  " Very magic by default
-  nnoremap ? ?\v
-  nnoremap / /\v
-  cnoremap %s/ %sm/
-  
-  " Open new file adjacent to current file
-  nnoremap <leader>o :e <C-R>=expand("%:p:h") . "/" <CR>
-  
-  " Move by line
-  nnoremap j gj
-  nnoremap k gk
-  
-  " Help filetype detection
-  autocmd BufRead *.plot set filetype=gnuplot
-  autocmd BufRead *.md set filetype=markdown
-  autocmd BufRead *.lds set filetype=ld
-  autocmd BufRead *.tex set filetype=tex
-  autocmd BufRead *.trm set filetype=c
-  autocmd BufRead *.xlsx.axlsx set filetype=ruby
-]])
+ 
+-- vim.cmd([[
+--   " Ctrl+j and Ctrl+k as Esc
+--   " Ctrl-j is a little awkward unfortunately:
+--   " https://github.com/neovim/neovim/issues/5916
+--   " So we also map Ctrl+k
+--   "nnoremap <C-j> <Esc>
+--   "inoremap <C-j> <Esc>
+--   "vnoremap <C-j> <Esc>
+--   "snoremap <C-j> <Esc>
+--   "xnoremap <C-j> <Esc>
+--   "cnoremap <C-j> <C-c>
+--   "onoremap <C-j> <Esc>
+--   "lnoremap <C-j> <Esc>
+--   "tnoremap <C-j> <Esc>
+--   "
+--   "nnoremap <C-k> <Esc>
+--   "inoremap <C-k> <Esc>
+--   "vnoremap <C-k> <Esc>
+--   "snoremap <C-k> <Esc>
+--   "xnoremap <C-k> <Esc>
+--   "cnoremap <C-k> <C-c>
+--   "onoremap <C-k> <Esc>
+--   "lnoremap <C-k> <Esc>
+--   "tnoremap <C-k> <Esc>
+--   
+--     " Split panes keys
+--   " nnoremap <silent> <leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+--   " nnoremap <silent> <leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+--   " " Switch split panes 
+--   " nmap <silent> <c-k> :wincmd k<CR>
+--   " nmap <silent> <c-j> :wincmd j<CR>
+--   " nmap <silent> <c-h> :wincmd h<CR>
+--   " "nmap <silent> <c-l> :wincmd l<CR> " Overwrites nohl 
+--   
+--     " Search results centered please
+--   nnoremap <silent> n nzz
+--   nnoremap <silent> N Nzz
+--   nnoremap <silent> * *zz
+--   nnoremap <silent> # #zz
+--   nnoremap <silent> g* g*zz
+--   
+--   " Very magic by default
+--   nnoremap ? ?\v
+--   nnoremap / /\v
+--   cnoremap %s/ %sm/
+--   
+--   " Open new file adjacent to current file
+--   nnoremap <leader>o :e <C-R>=expand("%:p:h") . "/" <CR>
+--   
+--   " Move by line
+--   nnoremap j gj
+--   nnoremap k gk
+--   
+--   " Help filetype detection
+--   autocmd BufRead *.plot set filetype=gnuplot
+--   autocmd BufRead *.md set filetype=markdown
+--   autocmd BufRead *.lds set filetype=ld
+--   autocmd BufRead *.tex set filetype=tex
+--   autocmd BufRead *.trm set filetype=c
+--   autocmd BufRead *.xlsx.axlsx set filetype=ruby
+-- ]])
+
 
 
 -- Run :Black 

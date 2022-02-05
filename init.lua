@@ -28,7 +28,6 @@ set.shiftwidth = 2
 
 --vim.wo.colorcolumn = '80'
 
-
 -- Permanent undo: u - undo, Ctrl r - redo
 vim.cmd([[
   set undodir=~/.vimdid
@@ -73,8 +72,6 @@ vim.cmd([[
 --   "colorscheme base16-helios " Very pleasant for TeX: pink + green (izumrude) + light orange
 --   "colorscheme Monokai
 --   "colorscheme h80
---   "colorscheme jellybeans
---   "colorscheme gruvbox
 -- ]])
 --
 -- vim.cmd[[colorscheme borland]]
@@ -90,7 +87,6 @@ vim.g.vscode_italic_comment = 1
 vim.cmd[[colorscheme vscode]]
 --]]
 --vim.cmd[[colorscheme welpe]]
-
 --vim.cmd[[colorscheme gruvbox]]
 
 vim.cmd([[
