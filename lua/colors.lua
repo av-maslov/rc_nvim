@@ -1,4 +1,5 @@
 -- Colors
+-- Base16 are nice
 -- http://chriskempson.com/projects/base16/
 -- F8 - Next random color scheme
 -- vim.cmd([[
@@ -13,6 +14,7 @@
 -- vim.cmd[[coloscheme Monokai]]
 -- vim.cmd[[coloscheme h80]]
 
+-- https://github.com/chriskempson/base16-vim
 vim.cmd([[
   if !has('gui_running')
     set t_Co=256
@@ -21,10 +23,11 @@ vim.cmd([[
     " screen does not (yet) support truecolor
     set termguicolors
   endif
+  "let g:base16_shell_path="~/dev/others/base16/templates/shell/scripts/"
+  hi Normal ctermbg=NONE
   set background=dark
   let base16colorspace=256
-  let g:base16_shell_path="~/dev/others/base16/templates/shell/scripts/"
-  hi Normal ctermbg=NONE
+  set termguicolors
 ]])
 
 --[[
@@ -37,5 +40,6 @@ vim.cmd[[colorscheme vscode]]
 --vim.cmd[[colorscheme welpe]]
 --vim.cmd[[colorscheme warriors-away]]
 --vim.cmd[[colorscheme default]]
-vim.cmd[[colorscheme gruvbox]]
+--vim.cmd[[colorscheme gruvbox]]
+vim.cmd[[colorscheme base16-default-dark]]
 

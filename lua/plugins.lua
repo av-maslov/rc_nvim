@@ -88,14 +88,13 @@ return require('packer').startup(function()
    -- Colors
    -- Switch color schemes:
    -- https://github.com/xolox/vim-colorscheme-switcher
-   use 'flazz/vim-colorschemes'
-   use 'xolox/vim-misc'
-   use 'xolox/vim-colorscheme-switcher' --Press F8 to switch color theme!
+   --use 'flazz/vim-colorschemes'
+   --use 'xolox/vim-misc'
+   --use 'xolox/vim-colorscheme-switcher' --Press F8 to switch color theme!
 
    use 'morhetz/gruvbox'
    use 'reyemxela/base16-helios-scheme'
    use 'chriskempson/base16-vim'
-   use 'nanotech/jellybeans.vim'
    use 'Mofiqul/vscode.nvim'
 
    -- LSP 
