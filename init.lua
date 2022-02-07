@@ -3,6 +3,7 @@ require('keymappings')
 require('colors')
 require('plugins')
 require('nvim-cmp')
+require('settings')
 
 -- Important have it at the end.
 -- https://neovim.io/doc/user/provider.html
