@@ -49,7 +49,9 @@ keymap("n", "<S-Tab>", ":bprevious<CR>", opts)
 -- Exit insert mode in the Terminal mode 
 --keymap("t", "jk", "<C-\><C-n>")
 vim.cmd([[tnoremap jk <C-\><C-n>]])
-
+-- " Open new file adjacent to current file
+--keymap("n", "<Leader>o", ":e <C-R>=expand("%:p:h") . "/" <CR>", opts)
+vim.cmd([[nnoremap <leader>o :e <C-R>=expand("%:p:h") . "/" <CR>]])
 -- Switch buffers
 --keymap("n", "<Leader>-<Leader>", "c-^", opts)
 --keymap("n", "<C-t>", "c-^", opts)
