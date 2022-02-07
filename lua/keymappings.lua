@@ -194,13 +194,4 @@ vim.cmd([[
 ]])
 
 
-vim.cmd([[
-  runtime settings-autocomple.vim
-  runtime settings-lsp.vim
-  runtime settings-nvim-cmp.vim
-  runtime settings-lightline.vim
-  runtime settings-ultisnips.vim
-  " runtime settings-lsp-coc.vim - Clashes with UltiSnips
-]])
-
 
