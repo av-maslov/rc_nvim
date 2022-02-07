@@ -1,13 +1,11 @@
 -- Colors
--- Base16 are nice
--- http://chriskempson.com/projects/base16/
--- F8 - Next random color scheme
--- vim.cmd([[
---   "colorscheme base16-gruvbox-dark-hard " Good for programming, used in Rust videos 
---   "colorscheme base16-helios " Very pleasant for TeX: pink + green (izumrude) + light orange
---   "colorscheme h80
--- ]])
 --
+-- Base16 are nice
+-- https://github.com/chriskempson/base16-shell
+-- git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+--
+-- http://chriskempson.com/projects/base16/
+
 -- vim.cmd[[colorscheme borland]]
 -- vim.cmd[[coloscheme base16-gruvbox-dark-hard ]]
 -- vim.cmd[[coloscheme base16-helios]]
@@ -23,7 +21,6 @@ vim.cmd([[
     " screen does not (yet) support truecolor
     set termguicolors
   endif
-  "let g:base16_shell_path="~/dev/others/base16/templates/shell/scripts/"
   hi Normal ctermbg=NONE
   set background=dark
   let base16colorspace=256
