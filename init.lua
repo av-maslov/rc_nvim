@@ -1,5 +1,6 @@
 require('basics')
 require('keymappings')
+require('colors')
 require('plugins')
 require('nvim-cmp')
 
