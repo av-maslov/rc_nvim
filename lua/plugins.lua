@@ -18,7 +18,6 @@ return require('packer').startup(function()
   -- Load on an autocommand event
   use {'andymass/vim-matchup', event = 'VimEnter'}
 
-
   -- You can specify rocks in isolation
   use_rocks 'penlight'
   use_rocks {'lua-resty-http', 'lpeg'}
@@ -27,13 +26,13 @@ return require('packer').startup(function()
   --use '~/projects/personal/hover.nvim'
 
   -- useins can have post-install/update hooks
-  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
+  -- use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
 
   -- Post-install/update hook with neovim command
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
   -- Post-install/update hook with call of vimscript function with argument
-  use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end }
+  -- use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end }
 
   -- Use specific branch, dependency and run lua file after load
   --use {
