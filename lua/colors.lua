@@ -39,4 +39,4 @@ vim.cmd[[colorscheme vscode]]
 --vim.cmd[[colorscheme default]]
 --vim.cmd[[colorscheme gruvbox]]
 vim.cmd[[colorscheme base16-default-dark]]
-
+--vim.cmd[[colorscheme blue]]

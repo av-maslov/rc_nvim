@@ -4,10 +4,12 @@ vim.cmd([[
 ]])
 
 vim.cmd([[
-  runtime settings-autocomple.vim
-  runtime settings-lsp.vim
-  runtime settings-nvim-cmp.vim
   runtime settings-lightline.vim
   runtime settings-ultisnips.vim
 ]])
+
+--vim.cmd([[runtime settings-autocomple.vim]])
+--vim.cmd([[runtime settings-lsp.vim]])
+--vim.cmd([[runtime settings-nvim-cmp.vim]])
+
 

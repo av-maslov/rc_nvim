@@ -35,8 +35,15 @@ vim.cmd([[
   set listchars=nbsp:¬,extends:»,precedes:«,trail:•
 ]])
 
+-- https://vim.fandom.com/wiki/Highlight_current_line
 vim.cmd([[
+  " hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+  " hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
   hi CursorLine term=bold cterm=bold guibg=Grey40
+  
+  ]])
+
+vim.cmd([[
   au Filetype tex set spell
   set mouse=a " Enable mouse usage (all modes) in terminals
   set autochdir

@@ -25,6 +25,9 @@ keymap("n", "<C-b>", ":nohl<CR>", opts)
 keymap("n", "<C-s>", "<Esc>:update<CR>", opts)
 keymap("i", "<C-s>", "<Esc>:update<CR>", opts)
 keymap("n", "<Leader>w", ":w<CR>", opts)
+-- Split
+keymap("n", "<Leader>h", ":split<CR>", {silent = true})
+keymap("n", "<Leader>v", ":vsplit<CR>", {silent = true})
 -- Quit
 keymap("n", "<Leader>q", ":q<CR>", opts)
 keymap("n", "<Leader>k", ":Bclose<CR>", opts)
@@ -59,7 +62,8 @@ vim.cmd([[
   nnoremap <leader><leader> <c-^>
   nnoremap <c-t> <c-^>
 ]])
-
+-- Show cursorline / column
+keymap("n", "<Leader>c", ":set cursorline! cursorcolumn!<CR>", opts)
 keymap("n", "<Leader>t", "<C-w>w<CR>", opts)
 --keymap("n", "<Tab>", "<C-w>w<CR>", opts)
 
@@ -162,9 +166,11 @@ vim.cmd([[
   
   noremap <F6> :make<CR>
   noremap <F7> :make<BAR>copen<CR>
-  
-  "ctags p.257, tip 103 
-  nnoremap <leader>c :!ctags -R --languages=python --python-kinds=-i --exclude=.git --exclude=venv<CR>
+]])
+
+-- ctags p.257, tip 103 
+vim.cmd([[
+  nnoremap <leader>y :!ctags -R --languages=python --python-kinds=-i --exclude=.git --exclude=venv<CR>
   set tags=tags
 ]])
 
