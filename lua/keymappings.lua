@@ -19,6 +19,11 @@ keymap("n", "<Right>", ":bn<CR>", opts)
 keymap("i", "jk", "<Esc>", opts)
 keymap("i", "kj", "<Esc>", opts)
 keymap("i", "jj", "<Esc>", opts)
+-- Move by display lines (Tip48)
+keymap("n", "k", "gk", opts)
+keymap("n", "gk", "k", opts)
+keymap("n", "j", "gj", opts)
+keymap("n", "gj", "j", opts)
 -- Nohl
 keymap("n", "<C-b>", ":nohl<CR>", opts)
 -- Save
