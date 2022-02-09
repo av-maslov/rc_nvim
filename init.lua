@@ -1,4 +1,5 @@
 --
+-- 2022.02.09: Ultisnips completion works with TAB currentrly
 -- nvim --nopplugin
 --
 require('basics')
