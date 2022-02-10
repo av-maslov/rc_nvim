@@ -7,6 +7,7 @@ require('keymappings')
 require('colors')
 require('plugins')
 require('nvim-cmp')
+require('nvim-lspconfig')
 --require('settings')
 
 -- Important have it at the end.

@@ -27,7 +27,7 @@ vim.cmd([[
   set termguicolors
 ]])
 
---[[
+---[[
 vim.g.vscode_style = "dark"
 vim.g.vscode_transparent = 0
 vim.g.vscode_italic_comment = 1
@@ -39,4 +39,4 @@ vim.cmd[[colorscheme vscode]]
 --vim.cmd[[colorscheme default]]
 --vim.cmd[[colorscheme gruvbox]]
 --vim.cmd[[colorscheme base16-default-dark]]
-vim.cmd[[colorscheme darkblue]]
+--vim.cmd[[colorscheme darkblue]]
