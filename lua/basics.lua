@@ -12,7 +12,7 @@ vim.o.wrap = true
 vim.o.linebreak=true
 vim.o.relativenumber=true
 vim.o.number=true
-vim.o.cursorline = false
+vim.o.cursorline = true
 
 -- local set = vim.opt
 
@@ -35,13 +35,6 @@ vim.cmd([[
   set listchars=nbsp:¬,extends:»,precedes:«,trail:•
 ]])
 
--- https://vim.fandom.com/wiki/Highlight_current_line
-vim.cmd([[
-  " hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-  " hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-  hi CursorLine term=bold cterm=bold guibg=Grey40
-  
-  ]])
 
 vim.cmd([[
   au Filetype tex set spell

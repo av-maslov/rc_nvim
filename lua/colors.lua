@@ -27,7 +27,7 @@ vim.cmd([[
   set termguicolors
 ]])
 
----[[
+--[[
 vim.g.vscode_style = "dark"
 vim.g.vscode_transparent = 0
 vim.g.vscode_italic_comment = 1
@@ -39,4 +39,14 @@ vim.cmd[[colorscheme vscode]]
 --vim.cmd[[colorscheme default]]
 --vim.cmd[[colorscheme gruvbox]]
 --vim.cmd[[colorscheme base16-default-dark]]
---vim.cmd[[colorscheme darkblue]]
+vim.cmd[[colorscheme darkblue]]
+
+
+-- https://vim.fandom.com/wiki/Highlight_current_line
+-- https://vim.fandom.com/wiki/Xterm256_color_names_for_console_Vim
+vim.cmd([[
+  " guifg - text color 
+  "hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+  "hi CursorLine cterm=NONE term=bold guibg=Grey20 guifg=white
+  hi CursorLine cterm=NONE term=bold guibg=Grey19 guifg=white
+  ]])
