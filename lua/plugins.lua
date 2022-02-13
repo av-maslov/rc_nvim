@@ -95,6 +95,8 @@ return require('packer').startup(function()
    use 'reyemxela/base16-helios-scheme'
    use 'chriskempson/base16-vim'
    use 'Mofiqul/vscode.nvim'
+   use 'folke/tokyonight.nvim'
+   use 'sainnhe/sonokai'
 
    -- LSP 
    --Autocompletion
@@ -111,6 +113,8 @@ return require('packer').startup(function()
    use 'sheerun/vim-polyglot'
 
    use {'psf/black', branch = 'main'}
+
+   use { 'justinmk/vim-sneak' }
 
    use {
     'kyazdani42/nvim-tree.lua',

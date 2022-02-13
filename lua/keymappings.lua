@@ -36,6 +36,8 @@ keymap("n", "<C-b>", ":nohl<CR>", opts)
 keymap("n", "<C-s>", "<Esc>:update<CR>", opts)
 keymap("i", "<C-s>", "<Esc>:update<CR>", opts)
 keymap("n", "<Leader>w", ":w<CR>", opts)
+-- Search 
+keymap("n", ",", "/", {noremap = true})
 -- Split
 keymap("n", "<Leader>h", ":split<CR>", {silent = true})
 keymap("n", "<Leader>v", ":vsplit<CR>", {silent = true})

@@ -8,7 +8,7 @@ require('colors')
 require('plugins')
 require('nvim-cmp')
 require('nvim-lspconfig')
---require('settings')
+require('settings')
 
 -- Important have it at the end.
 -- https://neovim.io/doc/user/provider.html
