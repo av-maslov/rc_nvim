@@ -1,6 +1,11 @@
+-- :checkhealth
+-- nvim --nopplugin
+-- nvim --clean
+--
+--
 --
 -- 2022.02.09: Ultisnips completion works with TAB currentrly
--- nvim --nopplugin
+--
 --
 require('basics')
 require('keymappings')
