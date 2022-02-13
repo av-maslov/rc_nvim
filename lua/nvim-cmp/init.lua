@@ -1,6 +1,5 @@
---" https://github.com/hrsh7th/nvim-cmp 
+-- https://github.com/hrsh7th/nvim-cmp 
 -- https://www.chrisatmachine.com/Neovim/27-native-lsp/
---set completeopt=menu,menuone,noselect
 vim.o.completeopt = "menu,menuone,noselect"
 
 -- Setup nvim-cmp.
@@ -10,7 +9,7 @@ cmp.setup({
   snippet = {
   -- REQUIRED - you must specify a snippet engine
   expand = function(args)
-    vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+    -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
     vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
   end,
   },
@@ -26,32 +25,33 @@ cmp.setup({
   ['<CR>'] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
   },
   sources = cmp.config.sources({
-  { name = 'nvim_lsp' },
-  { name = 'ultisnips' }, -- For ultisnips users.
+      { name = 'nvim_lsp' },
+      { name = 'ultisnips' }, -- For ultisnips users.
   }, {
-  { name = 'buffer' },
+    { name = 'buffer' },
   })
-  })
+})
 
-  -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-  cmp.setup.cmdline('/', {
-  sources = {
-  { name = 'buffer' }
-  }
-  })
+-- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline('/', {
+    sources = {
+      { name = 'buffer' }
+    }
+})
 
-  -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-  cmp.setup.cmdline(':', {
-  sources = cmp.config.sources({
-  { name = 'path' }
-  }, {
-  { name = 'cmdline' }
-  })
-  })
+-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline(':', {
+    sources = cmp.config.sources({
+        { name = 'path' }
+    }, {
+      { name = 'cmdline' }
+    })
+})
 
-  -- Setup lspconfig.
-  local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-  -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-  require('lspconfig')['pyright'].setup {
+-- Setup lspconfig.
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+-- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+require('lspconfig')['pyright'].setup {
   capabilities = capabilities
 }

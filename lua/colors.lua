@@ -27,6 +27,7 @@ vim.cmd([[
   set termguicolors
 ]])
 
+-- vscode theme set-up
 --[[
 vim.g.vscode_style = "dark"
 vim.g.vscode_transparent = 0
@@ -42,12 +43,17 @@ vim.cmd[[colorscheme vscode]]
 --
 --vim.cmd[[colorscheme default]]
 --vim.cmd[[colorscheme darkblue]]
---vim.cmd[[colorscheme torte]]
+--vim.cmd[[colorscheme torte]] -- Good for text
 
+--
 -- Colorschemes with Treesitter support
-vim.cmd[[colorscheme sonokai]]
+-- 
+vim.cmd[[colorscheme sonokai]]  -- !!! Very cool 
 --vim.cmd[[colorscheme tokyonight]] 
 
+--
+-- Cursorline highlight colors 
+--
 -- https://vim.fandom.com/wiki/Highlight_current_line
 -- https://vim.fandom.com/wiki/Xterm256_color_names_for_console_Vim
 vim.cmd([[
