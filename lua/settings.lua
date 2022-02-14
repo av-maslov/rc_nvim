@@ -6,7 +6,6 @@ vim.cmd([[
   let g:black_linelength = 120
 ]])
 
-vim.cmd([[ runtime settings-lightline.vim ]])
 
 --vim.cmd([[runtime settings-autocomple.vim]])
 --vim.cmd([[runtime settings-lsp.vim]])

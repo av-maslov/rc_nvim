@@ -11,10 +11,13 @@ require('basics')
 require('keymappings')
 require('colors')
 require('plugins')
+-- Plugins settings
 require('nvim-cmp')
 require('nvim-lspconfig')
 require('treesitter')
 require('ultisnips')
+require('lightline')
+-- Short plugins settings
 require('settings')
 
 -- Important have it at the end.
