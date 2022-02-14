@@ -13,6 +13,8 @@ require('colors')
 require('plugins')
 require('nvim-cmp')
 require('nvim-lspconfig')
+require('treesitter')
+require('ultisnips')
 require('settings')
 
 -- Important have it at the end.
