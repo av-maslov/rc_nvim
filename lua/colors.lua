@@ -44,13 +44,20 @@ vim.cmd[[colorscheme vscode]]
 --vim.cmd[[colorscheme default]]
 --vim.cmd[[colorscheme darkblue]]
 --vim.cmd[[colorscheme torte]] -- Good for text
-
 --
+--For text 
+--vim.cmd[[colorscheme zellner]]
+
 -- Colorschemes with Treesitter support
 -- 
 vim.cmd[[colorscheme sonokai]]  -- !!! Very cool 
 --vim.cmd[[colorscheme tokyonight]] 
-
+vim.cmd([[
+  autocmd BufEnter * colorscheme default
+  autocmd BufEnter *.tex colorscheme zellner
+  autocmd BufEnter *.py colorscheme sonokai 
+  autocmd BufEnter *.cc colorscheme sonokai 
+  ]])
 --
 -- Cursorline highlight colors 
 --

@@ -158,6 +158,7 @@ vim.cmd([[
   nnoremap GR :grep '\b<cword>\b' %:p:h/*<CR>
 ]])
 
+keymap("n", "<F6>", ":make<CR>", opts)
 vim.cmd([[
   " autocmd to run scripts
   " :!python % - send all lines from buffer to python
@@ -177,7 +178,7 @@ vim.cmd([[
   " autocmd filetype cpp inoremap <F10> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o "%<" "%" && "./%<" < inp<CR>
   autocmd filetype rust nnoremap <buffer> <leader>5 :!cargo run<CR>
   
-  noremap <F6> :make<CR>
+  "noremap <F6> :make<CR>
   noremap <F7> :make<BAR>copen<CR>
 ]])
 
