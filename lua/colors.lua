@@ -1,14 +1,9 @@
--- Colors
--- 
 -- Base16 are nice
 -- https://github.com/chriskempson/base16-shell
 -- git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 --
 -- http://chriskempson.com/projects/base16/
 
--- vim.cmd[[colorscheme borland]]
--- vim.cmd[[coloscheme base16-gruvbox-dark-hard ]]
--- vim.cmd[[coloscheme base16-helios]]
 -- vim.cmd[[coloscheme Monokai]]
 -- vim.cmd[[coloscheme h80]]
 
@@ -37,25 +32,27 @@ vim.cmd[[colorscheme vscode]]
 --]]
 
 --vim.cmd[[colorscheme gruvbox]]
+--vim.cmd[[colorscheme base16-gruvbox-dark-hard]]
 --vim.cmd[[colorscheme base16-default-dark]]
 --vim.cmd[[colorscheme base16-dracula]]
 --vim.cmd[[colorscheme base16-monokai]]
 --vim.cmd[[colorscheme base16-onedark]]
---
---vim.cmd[[colorscheme default]]
+-- vim.cmd[[coloscheme base16-helios]]
+
 --vim.cmd[[colorscheme darkblue]]
---vim.cmd[[colorscheme torte]] -- Good for text
---
---For text 
+--vim.cmd[[colorscheme torte]]
 --vim.cmd[[colorscheme zellner]]
 
--- Colorschemes with Treesitter support
--- vim.cmd[[colorscheme sonokai]]  -- !!! Very cool 
+------------------------------------------
+-- COLORSCHEMES WITH TREESITTER SUPPORT --
+------------------------------------------
+-- vim.cmd[[colorscheme sonokai]]
 -- vim.cmd[[colorscheme tokyonight]] 
 
-vim.cmd([[colorscheme default]])
+--vim.cmd([[colorscheme default]])
+vim.cmd[[colorscheme base16-gruvbox-dark-hard]]
 
--- autocmd colorscheme turns off CursorLine customization
+-- Autocmd colorscheme turns off CursorLine customization
 --vim.cmd([[
 --  autocmd BufEnter * colorscheme default
 --  autocmd BufEnter *.tex colorscheme morning " zellner
@@ -65,8 +62,9 @@ vim.cmd([[colorscheme default]])
 
 
 
--- Cursorline highlight colors 
---
+---------------------------------
+-- CURSORLINE HIGHLIGHT COLORS --
+---------------------------------
 -- https://vim.fandom.com/wiki/Highlight_current_line
 -- https://vim.fandom.com/wiki/Xterm256_color_names_for_console_Vim
 -- https://vim.fandom.com/wiki/Xterm256_color_names_for_console_Vim
