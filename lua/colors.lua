@@ -49,11 +49,13 @@ vim.cmd[[colorscheme vscode]]
 -- vim.cmd[[colorscheme sonokai]]
 -- vim.cmd[[colorscheme tokyonight]] 
 
------------------------------
--- LOAD CHOSEN COLORSCHEME --
------------------------------
+------------------------------------------------------
+-- LOAD CHOSEN COLORSCHEME - ADD NEW LINE EACH TIME --
+------------------------------------------------------
 --vim.cmd([[colorscheme default]])
-vim.cmd[[colorscheme base16-gruvbox-dark-hard]]
+--vim.cmd[[colorscheme base16-gruvbox-dark-hard]]
+--vim.cmd[[colorscheme tokyonight]]
+vim.cmd[[colorscheme sonokai]]
 
 
 -- Autocmd colorscheme turns off CursorLine customization
