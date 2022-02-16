@@ -70,9 +70,12 @@ vim.cmd([[colorscheme default]])
 -- https://vim.fandom.com/wiki/Highlight_current_line
 -- https://vim.fandom.com/wiki/Xterm256_color_names_for_console_Vim
 -- https://vim.fandom.com/wiki/Xterm256_color_names_for_console_Vim
-vim.cmd[[hi clear CursorLine]]
-vim.cmd[[hi CursorLine gui=underline cterm=underline]]
+-- Underline cusorline 
+--[[
+--  vim.cmd[[hi clear CursorLine]]
+--  vim.cmd[[hi CursorLine gui=underline cterm=underline]]
+--]]
 --  " guifg - text color 
 --  "hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 --  "hi CursorLine cterm=NONE term=bold guibg=Grey20 guifg=white
---  "hi CursorLine cterm=NONE term=bold  
+vim.cmd[[hi CursorLine cterm=NONE term=bold guibg=Grey9]]
