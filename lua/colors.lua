@@ -49,8 +49,12 @@ vim.cmd[[colorscheme vscode]]
 -- vim.cmd[[colorscheme sonokai]]
 -- vim.cmd[[colorscheme tokyonight]] 
 
+-----------------------------
+-- LOAD CHOSEN COLORSCHEME --
+-----------------------------
 --vim.cmd([[colorscheme default]])
 vim.cmd[[colorscheme base16-gruvbox-dark-hard]]
+
 
 -- Autocmd colorscheme turns off CursorLine customization
 --vim.cmd([[
