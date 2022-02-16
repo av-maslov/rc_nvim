@@ -9,7 +9,6 @@
 --
 require('basics')
 require('keymappings')
-require('colors')
 require('plugins')
 -- Plugins settings
 require('nvim-cmp')
@@ -19,6 +18,7 @@ require('ultisnips')
 require('lightline')
 -- Short plugins settings
 require('settings')
+require('colors')
 
 -- Important have it at the end.
 -- https://neovim.io/doc/user/provider.html

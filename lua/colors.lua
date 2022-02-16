@@ -27,6 +27,7 @@ vim.cmd([[
   set termguicolors
 ]])
 
+-- https://vimcolorschemes.com/
 -- vscode theme set-up
 --[[
 vim.g.vscode_style = "dark"
@@ -49,23 +50,29 @@ vim.cmd[[colorscheme vscode]]
 --vim.cmd[[colorscheme zellner]]
 
 -- Colorschemes with Treesitter support
--- 
-vim.cmd[[colorscheme sonokai]]  -- !!! Very cool 
---vim.cmd[[colorscheme tokyonight]] 
-vim.cmd([[
-  autocmd BufEnter * colorscheme default
-  autocmd BufEnter *.tex colorscheme zellner
-  autocmd BufEnter *.py colorscheme sonokai 
-  autocmd BufEnter *.cc colorscheme sonokai 
-  ]])
---
+-- vim.cmd[[colorscheme sonokai]]  -- !!! Very cool 
+-- vim.cmd[[colorscheme tokyonight]] 
+
+vim.cmd([[colorscheme default]])
+
+-- autocmd colorscheme turns off CursorLine customization
+--vim.cmd([[
+--  autocmd BufEnter * colorscheme default
+--  autocmd BufEnter *.tex colorscheme morning " zellner
+--  autocmd BufEnter *.py colorscheme default 
+--  autocmd BufEnter *.cc colorscheme sonokai 
+--  ]])
+
+
+
 -- Cursorline highlight colors 
 --
 -- https://vim.fandom.com/wiki/Highlight_current_line
 -- https://vim.fandom.com/wiki/Xterm256_color_names_for_console_Vim
-vim.cmd([[
-  " guifg - text color 
-  "hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-  "hi CursorLine cterm=NONE term=bold guibg=Grey20 guifg=white
-  hi CursorLine cterm=NONE term=bold guibg=Grey19
-  ]])
+-- https://vim.fandom.com/wiki/Xterm256_color_names_for_console_Vim
+vim.cmd[[hi clear CursorLine]]
+vim.cmd[[hi CursorLine gui=underline cterm=underline]]
+--  " guifg - text color 
+--  "hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+--  "hi CursorLine cterm=NONE term=bold guibg=Grey20 guifg=white
+--  "hi CursorLine cterm=NONE term=bold  
