@@ -12,7 +12,9 @@ vim.o.wrap = true
 vim.o.linebreak=true
 vim.o.relativenumber=true
 vim.o.number=true
-vim.o.cursorline = true
+--vim.o.cursorline = true
+
+vim.cmd[[set guicursor=a:blinkon100]]
 
 -- local set = vim.opt
 
