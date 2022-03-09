@@ -11,10 +11,3 @@ vim.cmd([[
 --vim.cmd([[runtime settings-lsp.vim]])
 --vim.cmd([[runtime settings-nvim-cmp.vim]])
 
--- https://github.com/justinmk/vim-sneak
-vim.cmd([[
-  map f <Plug>Sneak_s
-  map F <Plug>Sneak_S
-  let g:sneak#label = 1
-  ]])
-
