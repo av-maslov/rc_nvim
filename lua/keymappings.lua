@@ -169,7 +169,12 @@ vim.cmd([[
   " https://stackoverflow.com/questions/540721/compile-directly-from-vim
   autocmd filetype cpp nnoremap <buffer> <leader>4 :!g++ -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 % -ggdb -o %:r <CR>
   autocmd filetype cpp nnoremap <buffer> <leader>5 :!g++ -std=c++17 -Wextra -Wshadow -DONPC -O2 % -ggdb -o %:r && ./%:r <CR>
-  autocmd FileType c nnoremap <buffer> <leader>5 :!cc -std=c99 -Wall % -o %:r && ./%:r <CR>
+  " "autocmd FileType c nnoremap <buffer> <leader>5 :!cc -std=c99 -Wall % -o %:r && ./%:r <CR>
+
+  autocmd FileType c nnoremap <buffer> <leader>3 :!cc -std=c99 -Wall mpc.c -ledit -lm -o %< % <CR>
+  autocmd FileType c nnoremap <buffer> <leader>4 :!cc -std=c99 -Wall -o %< % <CR>
+  autocmd FileType c nnoremap <buffer> <leader>5 :!cc -std=c99 -Wall -o %< % && ./%< <CR>
+
   " From: https://youtu.be/a2DD36WHpAY
   autocmd filetype cpp noremap <F5> <ESC> :w <CR> :!g++ -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< <CR>
   autocmd filetype cpp inoremap <F5> <ESC> :w <CR> :!g++ -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< <CR>

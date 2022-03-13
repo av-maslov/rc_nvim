@@ -60,7 +60,9 @@ vim.cmd[[colorscheme vscode]]
 --vim.cmd[[colorscheme base16-classic-dark]]
 -- vim.cmd[[coloscheme base16-helios]]
 --vim.cmd([[colorscheme default]])
-vim.cmd[[colorscheme sonokai]]
+--vim.cmd[[colorscheme sonokai]]
+vim.cmd([[colorscheme default]])
+--vim.cmd[[colorscheme sonokai]]
 
 
 -- Autocmd colorscheme turns off CursorLine customization
