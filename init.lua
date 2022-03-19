@@ -17,7 +17,7 @@ require('treesitter')
 require('ultisnips')
 require('lightline')
 -- Short plugins settings
-require('settings')
+require('short_plugins_settings')
 require('colors')
 
 -- Important have it at the end.
