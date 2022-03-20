@@ -4,8 +4,9 @@
 --
 -- http://chriskempson.com/projects/base16/
 
--- vim.cmd[[coloscheme Monokai]]
--- vim.cmd[[coloscheme h80]]
+-- vim.cmd([[colorscheme default]])
+vim.cmd[[colorscheme sonokai]]
+
 
 -- https://github.com/chriskempson/base16-vim
 vim.cmd([[
@@ -61,8 +62,8 @@ vim.cmd[[colorscheme vscode]]
 -- vim.cmd[[coloscheme base16-helios]]
 --vim.cmd([[colorscheme default]])
 --vim.cmd[[colorscheme sonokai]]
-vim.cmd([[colorscheme default]])
---vim.cmd[[colorscheme sonokai]]
+-- vim.cmd([[colorscheme default]])
+-- vim.cmd[[colorscheme sonokai]]
 
 
 -- Autocmd colorscheme turns off CursorLine customization
