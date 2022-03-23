@@ -19,3 +19,18 @@ vim.cmd([[
   au Filetype python let b:AutoPairs = {"(": ")"}
   au FileType php    let b:AutoPairs = AutoPairsDefine({'<?' : '?>', '<?php': '?>'})
 ]])
+
+-- Scala metals
+-- from :help nvim-metals
+vim.cmd([[
+  augroup lsp
+  au!
+  au FileType java,scala,sbt lua require("metals").initialize_or_attach({})
+  augroup end
+]])
+vim.opt_global.shortmess:remove("F")
+
+metals_config = require("metals").bare_config()
+metals_config.init_options.statusBarProvider = "on"
+
+

@@ -164,6 +164,9 @@ vim.cmd([[
   " :!python % - send all lines from buffer to python
   autocmd FileType python nnoremap <buffer> <leader>5 :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
   autocmd FileType python nnoremap <buffer> <F5> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+
+  autocmd FileType scala nnoremap <buffer> <leader>5 :w<CR>:exec '!./mill foo.run' shellescape(@%, 1)<CR>
+  autocmd FileType scala nnoremap <buffer> <leader>6 :w<CR>:exec '!./mill foo.compile' shellescape(@%, 1)<CR>
   
   " autocmd FileType cpp nnoremap <buffer> <leader>5 :w<CR>:make<CR>
   " https://stackoverflow.com/questions/540721/compile-directly-from-vim

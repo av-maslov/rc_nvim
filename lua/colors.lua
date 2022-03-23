@@ -5,7 +5,9 @@
 -- http://chriskempson.com/projects/base16/
 
 -- vim.cmd([[colorscheme default]])
+-- With treesitter support:
 vim.cmd[[colorscheme sonokai]]
+--vim.cmd[[colorscheme tokyonight]] 
 
 
 -- https://github.com/chriskempson/base16-vim

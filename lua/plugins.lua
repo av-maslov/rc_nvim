@@ -124,6 +124,9 @@ return require('packer').startup(function()
     config = function() require'nvim-tree'.setup {} end
   }
 
+
+  use({'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" }})
+
   -- Load on a combination of conditions: specific filetypes or commands
   -- Also run code after load (see the "config" key)
   --use {
