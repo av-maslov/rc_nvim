@@ -9,7 +9,8 @@
 -- vim.cmd[[colorscheme sonokai]]
 --vim.cmd[[colorscheme tokyonight]] 
 -- No treesitter
-vim.cmd[[colorscheme base16-gruvbox-dark-soft]]
+--vim.cmd[[colorscheme base16-gruvbox-dark-soft]]
+vim.cmd[[colorscheme base16-gruvbox-dark-hard]]
 
 
 -- https://github.com/chriskempson/base16-vim

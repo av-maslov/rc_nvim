@@ -74,3 +74,9 @@ vim.cmd([[
   autocmd BufRead *.trm set filetype=c
   autocmd BufRead *.xlsx.axlsx set filetype=ruby
 ]])
+
+
+-- https://stackoverflow.com/questions/16840433/forcing-vimdiff-to-wrap-lines
+vim.cmd([[
+  autocmd FilterWritePre * if &diff | setlocal wrap< | endif
+]])
