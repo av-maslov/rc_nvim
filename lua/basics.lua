@@ -10,7 +10,7 @@ vim.cmd([[
 
 vim.o.wrap = true 
 vim.o.linebreak=true
-vim.o.relativenumber=false
+vim.o.relativenumber=true
 -- :set nornu :set rnu
 vim.o.number=true
 --vim.o.cursorline = true
