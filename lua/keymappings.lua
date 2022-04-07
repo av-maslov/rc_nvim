@@ -5,6 +5,9 @@ vim.g.mapleader = ' '
 local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
+--
+-- 2022.04.07: Exit insert mode in terminal - jk
+--
 -- No arrow keys --- force yourself to use the home row
 keymap("n", "<Up>", '', opts)
 keymap("n", "<Down>", '', opts)
@@ -165,8 +168,10 @@ vim.cmd([[
   autocmd FileType python nnoremap <buffer> <leader>5 :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
   autocmd FileType python nnoremap <buffer> <F5> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 
-  autocmd FileType scala nnoremap <buffer> <leader>5 :w<CR>:exec '!./mill foo.run' shellescape(@%, 1)<CR>
-  autocmd FileType scala nnoremap <buffer> <leader>6 :w<CR>:exec '!./mill foo.compile' shellescape(@%, 1)<CR>
+  " mill:autocmd FileType scala nnoremap <buffer> <leader>5 :w<CR>:exec '!./mill foo.run' shellescape(@%, 1)<CR>
+  " mill:autocmd FileType scala nnoremap <buffer> <leader>6 :w<CR>:exec '!./mill foo.compile' shellescape(@%, 1)<CR>
+  autocmd FileType scala nnoremap <buffer> <leader>5 :w<CR>:exec '!scala %'<CR>
+  autocmd FileType scala nnoremap <buffer> <leader>6 :w<CR>:exec '!sbt compile' shellescape(@%, 1)<CR>
   
   " autocmd FileType cpp nnoremap <buffer> <leader>5 :w<CR>:make<CR>
   " https://stackoverflow.com/questions/540721/compile-directly-from-vim
