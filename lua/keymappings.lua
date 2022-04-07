@@ -65,7 +65,7 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Switch buffers
 keymap("n", "<Tab>", ":bnext<CR>", opts)
 keymap("n", "<S-Tab>", ":bprevious<CR>", opts)
--- Exit insert mode in the Terminal mode 
+-- Exit insert mode in the Terminal mode (Esc like)
 --keymap("t", "jk", "<C-\><C-n>")
 vim.cmd([[tnoremap jk <C-\><C-n>]])
 -- " Open new file adjacent to current file
