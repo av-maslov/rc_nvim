@@ -5,7 +5,13 @@ vim.g.mapleader = ' '
 local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
---
+-- Insert date
+-- https://vim.fandom.com/wiki/Insert_current_date_or_time
+-- :nnoremap <F5> "=strftime("%c")<CR>P
+-- :inoremap <F5> <C-R>=strftime("%c")<CR>
+keymap("i", "<C-r>", '<C-R>=strftime("%Y-%m-%d")<CR>', opts)
+
+-- 
 -- 2022.04.07: Exit insert mode in terminal - jk
 --
 -- No arrow keys --- force yourself to use the home row
