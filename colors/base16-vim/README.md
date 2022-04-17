@@ -1,3 +1,4 @@
+Cloned to have a copy of `base16-gruvbox-dark-hard`
 
 - `git clone https://github.com/chriskempson/base16-vim.git`
 
