@@ -14,9 +14,9 @@ vim.cmd([[
 -- https://github.com/jiangmiao/auto-pairs
 vim.cmd([[
   "let g:AutoPairs = {'(':')', '[':']', '{':'}', '"""':'"""'}
- " let g:AutoPairs = Default: {'(':')', '[':']', '{':'}',"'":"'",'"':'"', "`":"`", '```':'```', '"""':'"""', "'''":"'''"}
+  " let g:AutoPairs = Default: {'(':')', '[':']', '{':'}',"'":"'",'"':'"', "`":"`", '```':'```', '"""':'"""', "'''":"'''"}
   " When the filetype is FILETYPE then make AutoPairs only match for parenthesis
-  au Filetype python let b:AutoPairs = {"(": ")"}
+  " au Filetype python let b:AutoPairs = {"(": ")"}
   au FileType php    let b:AutoPairs = AutoPairsDefine({'<?' : '?>', '<?php': '?>'})
 ]])
 
