@@ -13,7 +13,7 @@
 - `git clone https://github.com/av-maslov/rc_nvim.git ~/.config/nvim`
 
 
-## C/C++
+## C/C++ set up
 
 LSP - `clangd`.
 Addes as `local servers = { 'pyright', 'rust_analyzer', 'tsserver', 'clangd' }` to nvim-lspconfig.

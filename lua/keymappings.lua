@@ -41,11 +41,12 @@ keymap("n", "j", "gj", opts)
 keymap("n", "gj", "j", opts)
 -- Nohl
 keymap("n", "<C-b>", ":nohl<CR>", opts)
--- Save
-keymap("n", "<C-s>", "<Esc>:update<CR>", opts)
+-- Save 
+-- keymap("n", "<C-s>", "<Esc>:update<CR>", opts)
 keymap("i", "<C-s>", "<Esc>:update<CR>", opts)
 keymap("n", "<Leader>w", ":w<CR>", opts)
 -- Search 
+keymap("n", "<C-s>", "/", {noremap = true})
 keymap("n", ",", "/", {noremap = true})
 -- Split
 keymap("n", "<Leader>h", ":split<CR>", {silent = true})
