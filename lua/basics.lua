@@ -80,3 +80,8 @@ vim.cmd([[
 vim.cmd([[
   autocmd FilterWritePre * if &diff | setlocal wrap< | endif
 ]])
+
+-- https://vim.fandom.com/wiki/Remove_unwanted_spaces
+vim.cmd([[
+  autocmd FileType c, cpp, py autocmd BufWritePre <buffer> %s/\s\+$//e
+]])
