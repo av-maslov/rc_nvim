@@ -157,6 +157,7 @@ keymap("n", "<Leader>t", "<C-w>w<CR>", opts)
 
 -- Run :Black 
 vim.cmd([[
+  autocmd FileType python nnoremap <leader>i :execute '!isort %'<CR>
   autocmd FileType python nnoremap <leader>b :Black<CR> 
   autocmd FileType rust nnoremap <leader>b :RustFmt<CR> 
 ]])
