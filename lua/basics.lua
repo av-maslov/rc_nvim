@@ -88,9 +88,9 @@ vim.cmd([[
 
 
 -- https://stackoverflow.com/questions/4256697/vim-search-and-highlight-but-do-not-jump
-
-vim.cmd([[
-nnoremap * *``
-nnoremap * :keepjumps normal! mi*`i<CR>
-]])
+-- 
+-- vim.cmd([[
+--   nnoremap * *``
+--   nnoremap * :keepjumps normal! mi*`i<CR>
+-- ]])
 
