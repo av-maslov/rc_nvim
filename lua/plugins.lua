@@ -9,7 +9,7 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
   -- Simple plugins can be specified as strings
-  use '9mm/vim-closer'
+  -- use '9mm/vim-closer'
 
   -- Lazy loading:
   -- Load on specific commands
