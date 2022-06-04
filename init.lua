@@ -14,7 +14,7 @@ require('plugins')
 require('nvim-cmp')
 require('nvim-lspconfig')
 require('treesitter')
-require('ultisnips')
+--require('ultisnips')
 require('lightline')
 -- Short plugins settings
 require('short_plugins_settings')
@@ -27,3 +27,9 @@ vim.cmd([[
 ]])
 
 print("ETC?")
+
+-- https://github.com/hrsh7th/nvim-compe/issues/141
+vim.cmd([[
+  inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+]])

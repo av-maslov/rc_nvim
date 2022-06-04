@@ -199,6 +199,7 @@ vim.cmd([[
   " autocmd filetype cpp noremap <F10> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< < inp<CR>
   " autocmd filetype cpp inoremap <F10> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o "%<" "%" && "./%<" < inp<CR>
   autocmd filetype rust nnoremap <buffer> <leader>5 :!cargo run<CR>
+  autocmd filetype rust nnoremap <buffer> <leader>b :!rustfmt %<CR>
   
   "noremap <F6> :make<CR>
   noremap <F7> :make<BAR>copen<CR>

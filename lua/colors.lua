@@ -10,7 +10,7 @@
 --vim.cmd[[colorscheme tokyonight]] 
 -- No treesitter
 --vim.cmd[[colorscheme base16-gruvbox-dark-soft]]
-vim.cmd[[colorscheme base16-gruvbox-dark-hard]]
+-- vim.cmd[[colorscheme base16-gruvbox-dark-hard]]
 
 
 -- https://github.com/chriskempson/base16-vim
@@ -69,6 +69,13 @@ vim.cmd[[colorscheme vscode]]
 --vim.cmd[[colorscheme sonokai]]
 -- vim.cmd([[colorscheme default]])
 -- vim.cmd[[colorscheme sonokai]]
+--vim.cmd[[colorscheme base16-gruvbox-dark-soft]]
+-- vim.cmd[[colorscheme sonokai]]
+vim.cmd[[colorscheme onedark]]  -- https://github.com/joshdick/onedark.vim
+
+-- Not very good
+-- require('onedark').load()
+-- vim.cmd[[colorscheme onedark]]
 
 
 -- Autocmd colorscheme turns off CursorLine customization
