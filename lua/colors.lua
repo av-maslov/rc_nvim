@@ -73,10 +73,6 @@ vim.cmd[[colorscheme vscode]]
 -- vim.cmd[[colorscheme sonokai]]
 vim.cmd[[colorscheme onedark]]  -- https://github.com/joshdick/onedark.vim
 
--- Not very good
--- require('onedark').load()
--- vim.cmd[[colorscheme onedark]]
-
 
 -- Autocmd colorscheme turns off CursorLine customization
 --vim.cmd([[
