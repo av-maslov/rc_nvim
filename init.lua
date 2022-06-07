@@ -14,7 +14,7 @@ require('plugins')
 require('nvim-cmp')
 require('nvim-lspconfig')
 require('treesitter')
---require('ultisnips')
+require('ultisnips')
 require('lightline')
 -- Short plugins settings
 require('short_plugins_settings')

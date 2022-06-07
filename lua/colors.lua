@@ -28,51 +28,40 @@ vim.cmd([[
   set termguicolors
 ]])
 
--- https://vimcolorschemes.com/
--- vscode theme set-up
---[[
-vim.g.vscode_style = "dark"
-vim.g.vscode_transparent = 0
-vim.g.vscode_italic_comment = 1
-vim.cmd[[colorscheme vscode]]
---]]
 
---vim.cmd[[colorscheme gruvbox]]
---vim.cmd[[colorscheme base16-gruvbox-dark-hard]]
---vim.cmd[[colorscheme base16-default-dark]]
---vim.cmd[[colorscheme base16-dracula]]
---vim.cmd[[colorscheme base16-monokai]]
---vim.cmd[[colorscheme base16-onedark]]
+-----------------------------------------------------------------------------------------
+-------------------------------- COLORSCHEMES TIMELINE ----------------------------------
+-----------------------------------------------------------------------------------------
+-- vim.cmd[[colorscheme gruvbox]]
+-- vim.cmd[[colorscheme base16-default-dark]]
+-- vim.cmd[[colorscheme base16-dracula]]
+-- vim.cmd[[colorscheme base16-monokai]]
+-- vim.cmd[[colorscheme base16-onedark]]
 -- vim.cmd[[coloscheme base16-helios]]
+-- vim.cmd[[colorscheme darkblue]]
+-- vim.cmd[[colorscheme torte]]
+-- vim.cmd[[colorscheme zellner]]
+-- vim.cmd([[colorscheme default]])
+-- vim.cmd[[colorscheme base16-gruvbox-dark-hard]]
+-- vim.cmd[[colorscheme tokyonight]]
+-- vim.cmd[[colorscheme sonokai]]
+-- vim.cmd([[colorscheme default]])
+-- vim.cmd[[colorscheme base16-classic-dark]]
+-- vim.cmd[[coloscheme base16-helios]]
+-- vim.cmd([[colorscheme default]])
+-- vim.cmd[[colorscheme sonokai]]
+-- vim.cmd([[colorscheme default]])
+-- vim.cmd[[colorscheme sonokai]]
+-- vim.cmd[[colorscheme base16-gruvbox-dark-soft]]
+-- vim.cmd[[colorscheme sonokai]]
+vim.cmd[[colorscheme onedark]]  -- https://github.com/joshdick/onedark.vim
 
---vim.cmd[[colorscheme darkblue]]
---vim.cmd[[colorscheme torte]]
---vim.cmd[[colorscheme zellner]]
 
 ------------------------------------------
 -- COLORSCHEMES WITH TREESITTER SUPPORT --
 ------------------------------------------
 -- vim.cmd[[colorscheme sonokai]]
 -- vim.cmd[[colorscheme tokyonight]] 
-
----------------------------
--- COLORSCHEMES TIMELINE --
----------------------------
---vim.cmd([[colorscheme default]])
---vim.cmd[[colorscheme base16-gruvbox-dark-hard]]
---vim.cmd[[colorscheme tokyonight]]
---vim.cmd[[colorscheme sonokai]]
---vim.cmd([[colorscheme default]])
---vim.cmd[[colorscheme base16-classic-dark]]
--- vim.cmd[[coloscheme base16-helios]]
---vim.cmd([[colorscheme default]])
---vim.cmd[[colorscheme sonokai]]
--- vim.cmd([[colorscheme default]])
--- vim.cmd[[colorscheme sonokai]]
---vim.cmd[[colorscheme base16-gruvbox-dark-soft]]
--- vim.cmd[[colorscheme sonokai]]
-vim.cmd[[colorscheme onedark]]  -- https://github.com/joshdick/onedark.vim
-
 
 -- Autocmd colorscheme turns off CursorLine customization
 --vim.cmd([[
