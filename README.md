@@ -7,6 +7,37 @@
 - `i`
 - `i`
 
+## https://github.com/justinmk/vim-sneak
+
+
+- `s / S`
+- `;` Next match.
+- `ctrl o`
+- `s<Enter>` Repeat last search.
+- `i`
+- `i`
+- `i`
+
+## Rust 
+- `i`
+
+## Rust 
+- `i`
+
+## Rust 
+
+## Rust 
+
+## Rust 
+- `i`
+
+## Rust 
+- `i`
+
+## Rust 
+
+## Rust 
+
 ## Rust 
 
 - https://rust-analyzer.github.io/manual.html#rust-analyzer-language-server-binary

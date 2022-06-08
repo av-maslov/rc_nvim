@@ -154,6 +154,13 @@ keymap("n", "<Leader>t", "<C-w>w<CR>", opts)
 -- ]])
 
 
+-- https://vim.fandom.com/wiki/Insert_current_date_or_time
+-- Insert date and time, timestamp
+vim.cmd([[
+nnoremap <F3> "=strftime("%Y-%m-%d %a %I:%M %p")<CR>P
+inoremap <F5> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
+
+]])
 
 -- Run :Black 
 vim.cmd([[
