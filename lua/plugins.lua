@@ -1,4 +1,3 @@
-
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
 -- Only required if you have packer configured as `opt`
@@ -13,14 +12,14 @@ return require('packer').startup(function()
 
   -- Lazy loading:
   -- Load on specific commands
-  use {'tpope/vim-dispatch', opt = true, cmd = {'Dispatch', 'Make', 'Focus', 'Start'}}
+  use { 'tpope/vim-dispatch', opt = true, cmd = { 'Dispatch', 'Make', 'Focus', 'Start' } }
 
   -- Load on an autocommand event
-  use {'andymass/vim-matchup', event = 'VimEnter'}
+  use { 'andymass/vim-matchup', event = 'VimEnter' }
 
   -- You can specify rocks in isolation
   use_rocks 'penlight'
-  use_rocks {'lua-resty-http', 'lpeg'}
+  use_rocks { 'lua-resty-http', 'lpeg' }
 
   -- Local plugins can be included
   --use '~/projects/personal/hover.nvim'
@@ -52,79 +51,79 @@ return require('packer').startup(function()
   -- You can alias plugin names
   --use {'dracula/vim', as = 'dracula'}
 
-   -- Telescope
+  -- Telescope
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
-  use 'nvim-telescope/telescope.nvim' 
+  use 'nvim-telescope/telescope.nvim'
 
-   -- Fuzzy search
-   use 'airblade/vim-rooter'
-   use {'junegunn/fzf', run = function() vim.fn['fzf#install'](0) end}--, { 'do': { -> fzf#install() } }
-   --use 'junegunn/fzf'--, { 'do': { -> fzf#install() } }
-   use 'junegunn/fzf.vim'
+  -- Fuzzy search
+  use 'airblade/vim-rooter'
+  use { 'junegunn/fzf', run = function() vim.fn['fzf#install'](0) end } --, { 'do': { -> fzf#install() } }
+  --use 'junegunn/fzf'--, { 'do': { -> fzf#install() } }
+  use 'junegunn/fzf.vim'
 
-   use 'rbgrouleff/bclose.vim'
-   use 'francoiscabrol/ranger.vim' -- If you use neovim, you have to add the dependency to the plugin bclose.vim
+  use 'rbgrouleff/bclose.vim'
+  use 'francoiscabrol/ranger.vim' -- If you use neovim, you have to add the dependency to the plugin bclose.vim
 
-   use 'jiangmiao/auto-pairs'
+  use 'jiangmiao/auto-pairs'
 
-   -- Snippets
-   -- :UltiSnipsEdit
-   -- :Snippets - explore snippets
-   -- Ctrl j Jump to next 
-   use 'SirVer/ultisnips'  
-   use 'honza/vim-snippets'
+  -- Snippets
+  -- :UltiSnipsEdit
+  -- :Snippets - explore snippets
+  -- Ctrl j Jump to next
+  use 'SirVer/ultisnips'
+  use 'honza/vim-snippets'
 
-   -- Git
-   use 'tpope/vim-fugitive'
-   ---- Keys: [c , ]c to jump between changes
-   use 'airblade/vim-gitgutter'
-   ---- Show diffs
-   use 'mhinz/vim-signify'
-   ---- Browse commits :GV, :GV!
-   use 'junegunn/gv.vim'
+  -- Git
+  use 'tpope/vim-fugitive'
+  ---- Keys: [c , ]c to jump between changes
+  use 'airblade/vim-gitgutter'
+  ---- Show diffs
+  use 'mhinz/vim-signify'
+  ---- Browse commits :GV, :GV!
+  use 'junegunn/gv.vim'
 
-   -- Colors
-   -- Switch color schemes:
-   -- https://github.com/xolox/vim-colorscheme-switcher
-   --use 'flazz/vim-colorschemes'
-   --use 'xolox/vim-misc'
-   --use 'xolox/vim-colorscheme-switcher' --Press F8 to switch color theme!
+  -- Colors
+  -- Switch color schemes:
+  -- https://github.com/xolox/vim-colorscheme-switcher
+  --use 'flazz/vim-colorschemes'
+  --use 'xolox/vim-misc'
+  --use 'xolox/vim-colorscheme-switcher' --Press F8 to switch color theme!
 
-   use 'morhetz/gruvbox'
-   use 'reyemxela/base16-helios-scheme'
-   use 'chriskempson/base16-vim'
-   use 'Mofiqul/vscode.nvim'
-   use 'folke/tokyonight.nvim'
-   use 'sainnhe/sonokai'
-   use 'joshdick/onedark.vim'
+  use 'morhetz/gruvbox'
+  use 'reyemxela/base16-helios-scheme'
+  use 'chriskempson/base16-vim'
+  use 'Mofiqul/vscode.nvim'
+  use 'folke/tokyonight.nvim'
+  use 'sainnhe/sonokai'
+  use 'joshdick/onedark.vim'
 
 
-   -- LSP 
-   --Autocompletion
-   --https://github.com/hrsh7th/nvim-cmp
-   use 'neovim/nvim-lspconfig'
-   use 'hrsh7th/cmp-nvim-lsp'
-   use 'hrsh7th/cmp-buffer'
-   use 'hrsh7th/cmp-path'
-   use 'hrsh7th/cmp-cmdline'
-   use 'hrsh7th/nvim-cmp'
+  -- LSP
+  --Autocompletion
+  --https://github.com/hrsh7th/nvim-cmp
+  use 'neovim/nvim-lspconfig'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use 'hrsh7th/nvim-cmp'
 
-   use 'google/vim-searchindex'
-   use 'itchyny/lightline.vim'
-   use 'sheerun/vim-polyglot'
+  use 'google/vim-searchindex'
+  use 'itchyny/lightline.vim'
+  use 'sheerun/vim-polyglot'
 
-   use {'psf/black', branch = 'main'}
+  use { 'psf/black', branch = 'main' }
 
-   use { 'justinmk/vim-sneak' }
+  use { 'justinmk/vim-sneak' }
 
-   use {
+  use {
     'kyazdani42/nvim-tree.lua',
     requires = {
       'kyazdani42/nvim-web-devicons', -- optional, for file icon
     },
-    config = function() require'nvim-tree'.setup {} end
-   }
+    config = function() require 'nvim-tree'.setup {} end
+  }
 
 
 
@@ -146,7 +145,7 @@ return require('packer').startup(function()
         -- order matters: if one is not detected, the other is used as fallback. You
         -- can also delete or rearangne the detection methods.
         detection_methods = { "lsp", "pattern", "=src" },
-        
+
         -- All the patterns used to detect root dir, when **"pattern"** is in
         -- detection_methods
         patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json" },
@@ -196,5 +195,3 @@ return require('packer').startup(function()
   --  rocks = {'lpeg', {'lua-cjson', version = '2.1.0'}}
   --}
 end)
-
-

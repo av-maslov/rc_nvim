@@ -54,7 +54,8 @@ vim.cmd([[
 -- vim.cmd[[colorscheme sonokai]]
 -- vim.cmd[[colorscheme base16-gruvbox-dark-soft]]
 -- vim.cmd[[colorscheme sonokai]]
-vim.cmd[[colorscheme onedark]]  -- https://github.com/joshdick/onedark.vim
+-- vim.cmd[[colorscheme onedark]]  -- https://github.com/joshdick/onedark.vim
+vim.cmd[[colorscheme base16-gruvbox-dark-soft]] -- use 'chriskempson/base16-vim'
 
 
 ------------------------------------------
