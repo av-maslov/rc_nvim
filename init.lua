@@ -1,5 +1,5 @@
 -- :checkhealth
--- nvim --nopplugin
+-- nvim --noplugin
 -- nvim --clean
 --
 --
@@ -9,16 +9,16 @@
 --
 require('basics')
 require('keymappings')
-require('plugins')
--- Plugins settings
-require('nvim-cmp')
-require('nvim-lspconfig')
-require('treesitter')
-require('ultisnips')
-require('lightline')
--- Short plugins settings
-require('short_plugins_settings')
-require('colors')
+-- require('plugins')
+-- -- Plugins settings
+-- require('nvim-cmp')
+-- require('nvim-lspconfig')
+-- require('treesitter')
+-- require('ultisnips')
+-- require('lightline')
+-- -- Short plugins settings
+-- require('short_plugins_settings')
+-- require('colors')
 
 -- Important have it at the end.
 -- https://neovim.io/doc/user/provider.html

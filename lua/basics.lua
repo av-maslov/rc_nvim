@@ -8,15 +8,15 @@ vim.cmd([[
   set encoding=utf-8
 ]])
 
-vim.o.wrap = true 
-vim.o.linebreak=true
-vim.o.relativenumber=true
+vim.o.wrap = true
+vim.o.linebreak = true
+vim.o.relativenumber = true
 -- :set nornu :set rnu
-vim.o.number=true
+vim.o.number = true
 --vim.o.cursorline = true
 
 -- From :help guicursor
-vim.cmd[[set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175]]
+vim.cmd [[set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175]]
 
 -- local set = vim.opt
 
@@ -88,9 +88,8 @@ vim.cmd([[
 
 
 -- https://stackoverflow.com/questions/4256697/vim-search-and-highlight-but-do-not-jump
--- 
+--
 -- vim.cmd([[
 --   nnoremap * *``
 --   nnoremap * :keepjumps normal! mi*`i<CR>
 -- ]])
-
