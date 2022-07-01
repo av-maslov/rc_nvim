@@ -1,4 +1,7 @@
 
+
+2022-07-01: Now using LumarVim and this with very minimal settings.
+
 - https://vonheikemen.github.io/devlog/tools/configuring-neovim-using-lua/
 - https://github.com/nanotee/nvim-lua-guide
 - https://github.com/LunarVim/LunarVim is cool !
